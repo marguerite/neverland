@@ -397,7 +397,8 @@ function marguerite_bar_cat() {
 	foreach ($cat_id_results as $cat_id_result) {
 		$bar_width = ($cat_id_result->count)*5;
 		$output .= "<tr>";
-		$output .= "<td class=\"cat_name category-name".$cat_id_result->term_id."\">".get_the_category_by_ID($cat_id_result->term_id)."</td>";
+		$output .= "<td class=\"cat_name category-name".$cat_id_result->term_id."\">";
+		$output .= "<a href=\"".get_category_link($cat_id_result->term_id)."\">".get_the_category_by_ID($cat_id_result->term_id)."</a></td>";
 		$output .= "<td class=\"cat_bar category-". $cat_id_result->term_id . "\" style=\"width:".$bar_width."px\">";
 		$output .= $cat_id_result->count ."</td>";
 		$output .= "</tr>";
@@ -411,7 +412,7 @@ if(function_exists('register_sidebar_widget'))
 	register_sidebar_widget(__('月度存档'),'marguerite_monthly_archives');
 
 function marguerite_monthly_archives() {
-	global $wpdb;
+	global $wpdb,$wp_locale;
 	$monthly_archives = "SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish'GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC";
 	$monthly_archives_results = $wpdb->get_results($monthly_archives);
 	$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">Archives</h3>";
@@ -419,7 +420,8 @@ function marguerite_monthly_archives() {
 	foreach ($monthly_archives_results as $monthly_archives_result) {
 		$bar_width = ($monthly_archives_result->posts)*5;
 		$output .= "<tr>";
-		$output .= "<td class=\"cat_name archive-name-". $monthly_archives_result->year ."-". $monthly_archives_result->month ."\">" . $monthly_archives_result->year."/".$monthly_archives_result->month."</td>";
+		$output .= "<td class=\"cat_name archive-name-". $monthly_archives_result->year ."-". $monthly_archives_result->month ."\">";
+		$output .= "<a href=\">".get_month_link($monthly_archives_result->year,$monthly_archies_result->month)."\">".$wp_locale->get_month($monthly_archives_result->month).",".$monthly_archives_result->year."</a></td>";
 		$output .= "<td class=\"cat_bar archive-".$monthly_archives_result->year."-".$monthly_archives_result->month."\" style=\"width:".$bar_width."px;\">";
 		$output .= $monthly_archives_result->posts."</td>";
 		$output .= "</tr>";
