@@ -421,7 +421,7 @@ function marguerite_monthly_archives() {
 		$bar_width = ($monthly_archives_result->posts)*5;
 		$output .= "<tr>";
 		$output .= "<td class=\"cat_name archive-name-". $monthly_archives_result->year ."-". $monthly_archives_result->month ."\">";
-		$output .= "<a href=\">".get_month_link($monthly_archives_result->year,$monthly_archies_result->month)."\">".$wp_locale->get_month($monthly_archives_result->month).",".$monthly_archives_result->year."</a></td>";
+		$output .= "<a href=\"".get_month_link($monthly_archives_result->year,$monthly_archies_result->month)."\">".$wp_locale->get_month($monthly_archives_result->month).",".$monthly_archives_result->year."</a></td>";
 		$output .= "<td class=\"cat_bar archive-".$monthly_archives_result->year."-".$monthly_archives_result->month."\" style=\"width:".$bar_width."px;\">";
 		$output .= $monthly_archives_result->posts."</td>";
 		$output .= "</tr>";

@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
-			<div class="content">
-
+			<div class="categorytree">
 <?php
 	/* Queue the first post, that way we know
 	 * what date we're dealing with (if that is the case).
@@ -20,10 +19,25 @@
 				<?php printf( __( 'Monthly Archives: <span>%s</span>', 'twentyten' ), get_the_date('F Y') ); ?>
 <?php elseif ( is_year() ) : ?>
 				<?php printf( __( 'Yearly Archives: <span>%s</span>', 'twentyten' ), get_the_date('Y') ); ?>
+<?php elseif ( is_category() ) : ?>
+				<?php
+					printf( __( 'Category Archives: %s', 'twentyten' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+				?>
+<?php elseif ( is_tag() ) : ?>
+				<?php
+					printf( __( 'Tag Archives: %s', 'twentyten' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+				?>
 <?php else : ?>
 				<?php _e( 'Blog Archives', 'twentyten' ); ?>
 <?php endif; ?>
 			</h1>
+	
+<?php if ( is_category() ) : ?>
+					<?php
+					$category_description = category_description();
+					if ( ! empty( $category_description ) )
+						echo '<div class="archive-meta">' . $category_description . '</div>'; ?>
+<?php endif; ?>
 
 <?php
 	/* Since we called the_post() above, we need to
@@ -39,7 +53,6 @@
 	 get_template_part( 'loop', 'archive' );
 ?>
 
-			</div><!-- #content -->
-
+			</div><!-- .categorytree -->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

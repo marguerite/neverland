@@ -67,7 +67,7 @@ a:link,a:visited{
 	float: left;
 	margin-left: 5%;
 	margin-bottom: 5%;
-	padding: 0 15px;
+	padding: 0 15px 15px 15px;
 	background: rgba(255,255,255,.5) url(images/widget_area.png) no-repeat center top;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -632,7 +632,7 @@ input[type=submit] {
 }
 .widget-title {
 	margin: 10px 15px;
-	padding: 5px 15px;;
+	padding: 5px 15px;
 	background: rgba(255,255,255,.5);
 	}
 #searchform {
