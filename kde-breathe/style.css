@@ -5,7 +5,7 @@ Version: 2.0
 	
 	
 /* -- marguerite color manage */
-* {
+body {
 	font-family: 'Open Sans', sans-serif;
 	color: #636363;
 	}
@@ -139,7 +139,7 @@ a:link,a:visited{
         margin-top:5px;
 }
 #site-title a:hover {
-	background-image: url(images/title-hover.png);
+	background-position: 0 -46px;
 	}
 #site-title a {
 	letter-spacing: 1px;
@@ -147,7 +147,8 @@ a:link,a:visited{
    height: 46px;
    display: block;
    padding-left: 20px;
-	   background: url(images/title.png) no-repeat bottom left;
+	   background: url(images/title.png) no-repeat;
+	   background-position: 0 0;
 }
 #site-description {
 	margin-top: 12px
@@ -718,10 +719,11 @@ input[type=submit] {
 	display: inline-block;
 	padding-left: 20px;
 	height: 32px;
-	background: url(images/title.png) no-repeat left bottom;
+	background: url(images/title.png) no-repeat;
+	background-position: 0 -14px;
 }
 #site-info a:hover {
-	background-image: url(images/title-hover.png);
+	background-position: 0 -60px;
 	}
 #site-generator {
 	float: right;

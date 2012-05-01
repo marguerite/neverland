@@ -60,9 +60,7 @@
 <body <?php body_class(); ?>>
 	<div id="header">
 				<div id="site-title">
-					<span>
 						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					</span>
 				</div>
 
 			<div id="access">
