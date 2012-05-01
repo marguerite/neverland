@@ -86,6 +86,7 @@
 		);
 		// 图片的 instagram 特效
 			// 去掉继承的链接箭头
+			$(window).load(function(){
 			$(".entry-content img").each(function(){
 				var image_width = $(this).width();
 				var image_height = $(this).height();
@@ -101,10 +102,11 @@
 						$(this).width(300);
 						$(this).height(image_height*(300/image_width));
 						}); */
-					} 
+					}
 				$(this).parent().css({"background":"none","border":"none","margin":"0","padding":"0"});
-				$(this).css({"padding":image_width*0.02,"padding-bottom":image_width*0.1});
+				$(this).css("padding","10px 10px 25px 10px");
 				});
+			});
 		// 相册
 		// 删除分列用的 <br>
 			$(".gallery br").remove();
