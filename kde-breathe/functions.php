@@ -190,27 +190,26 @@ function twentyten_comment( $comment, $args, $depth ) {
 		case '' :
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<div id="comment-<?php comment_ID(); ?>">
-		<div class="comment-author vcard">
+		<div class="comment-author">
 			<?php echo get_avatar( $comment, 40 ); ?>
-			<?php printf( __( '%s', 'twentyten' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-		</div><!-- .comment-author .vcard -->
+			<?php printf( __( '%s', 'twentyten' ), sprintf( '%s', get_comment_author_link() ) ); ?>
+		</div><!-- .comment-author -->
 		<?php if ( $comment->comment_approved == '0' ) : ?>
 			<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyten' ); ?></em>
 			<br />
 		<?php endif; ?>
       <div class="comment-body">
-		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+		<div class="comment-meta"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 			<?php
 				/* translators: 1: date, 2: time */
 				printf( __( '%1$s at %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' );
 			?>
-		</div><!-- .comment-meta .commentmetadata -->
-
+		</div><!-- .comment-meta -->
+		 <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+			
         <?php comment_text(); ?>
-			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+
 		</div>
-	</div><!-- #comment-##  -->
 
 	<?php
 			break;
@@ -218,7 +217,7 @@ function twentyten_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'twentyten' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'twentyten' ); ?> <?php comment_author_link(); ?></p>
 	<?php
 			break;
 	endswitch;

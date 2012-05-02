@@ -427,9 +427,6 @@ a.author {
 #comments {
 	clear:both; /*-- clear the nav float --*/
 	}
-#comments .navigation {
-	padding: 0 0 18px 0;
-}
 h3#comments-title,
 h3#reply-title {
 	font-size: 16px;
@@ -455,21 +452,12 @@ h3#comments-title {
 	background: url(images/reply.png) no-repeat;
 	text-indent: -9999px;
 	}
-.commentlist .pingback a.comment-edit-link {
-	display: none;
-	}
-#comments .comment-body {
+.comment-body {
 	display: block;
 	margin-left: 12%;
 	min-height: 100px;
    box-shadow: -10px 0 10px -8px rgba(150,150,150,.5);
 	}
-#comments .comment-body ul {
-	margin-bottom: 18px; 
-}
-#comments .comment-body blockquote p:last-child {
-	margin-bottom: 24px;
-}
 .comment-author {
 	display: block;
 	float: left;
@@ -480,8 +468,8 @@ h3#comments-title {
 	border-radius: 24px;
 	-moz-border-radius: 24px;
 	}
-.comment-author cite {
-   font-size: 10px;
+.comment-author a {
+	display: block;
 }
 .comment-meta {
 	text-align: right;
@@ -489,25 +477,17 @@ h3#comments-title {
 .comment-meta a {
 	color: #999;
 	}
-.nopassword,
-.nocomments {
-	display: none;
-}
-#comments .pingback {
+#comments .pingback:last-child {
 	border-bottom: 1px solid #e7e7e7;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
-#comments .pingback p {
-	color: #333;
-	display: block;
-	font-size: 12px;
-	line-height: 18px;
-	margin: 0;
+
+
+/* Threaded Comment Children */
+.children {
+	margin-left: 30px;
 }
-#comments .pingback .url {
-	font-size: 13px;
-	font-style: italic;
+.children li {
+	border-bottom: none;
 }
 
 /* Comments form */
