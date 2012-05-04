@@ -140,10 +140,12 @@
 				$(this).width(width_mutiple*width_average);
 			});
 		// 匹配「KDE提交摘要*」，把它的 p 换成外面包上 ul li
-			var regex = "KDE提交摘要(2012/4/1)";
 			$(".post").each(function(){
-				if ( $(this).children(".entry-title").children("a").text(regex).length > 0 ) {
-					$(this).css("background-color","black");
+				if ( $(this).children(".entry-title").children("a").text().match('KDE.*\\(\\d{4}\\/\\d{1,2}\\/\\d{1,2}\\)') != null ) {
+					var content = $(this).children(".entry-content");
+            		var html = content.html();
+            		html = html.replace(/<p>/g,"<ul><li>").replace(/<\/p>/g,"</li></ul>").replace(/<br>/g,"</li><li>");
+            		content.html(html);
 				}
 			});
 		});
