@@ -1,7 +1,7 @@
 @charset "utf-8"
 
 /*
-	KDE Breache for Project Picky
+	Neverland for Project Picky
 	
 	Author: Marguerite.Su <i@marguerite.su>
 	Web: http://p.marguerite.su
@@ -40,7 +40,7 @@ code {
 /* Header */
 #header {
 	width: 80%;
-	margin: 0 auto 40px auto;
+	margin: -13px auto 40px auto;
 	padding: 0 15px;
 	background: rgba(255,255,255,.5);
 	border-bottom-left-radius: 5px;
