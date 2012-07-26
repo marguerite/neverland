@@ -1,0 +1,33 @@
+{% include 'header.html' %}
+<body onload="setupZoom()" style="background:url(static/themes/default/images/white_texture.png) repeat;font-family:'Open Sans',sans-serif;margin:0;padding:0;">
+			<div id="header">
+			      <h1 id="title">{{ site_name }}</h1>
+			      <span class="slogan">{{ site_slogan }}</span>
+			</div>
+			<div class="inner" style="width:80%;margin:0 auto; padding: 15px; background:rgba(255,255,255,.5) url(static/themes/default/images/widget_area.png) no-repeat top center;border-radius: 5px;-moz-border-radius: 5px;border:1px solid white;">
+				{% if page_archive %}
+				<div class="header">This is the complete archive of this blog, totally {{ articles_total }} articles.</div>
+				{% endif %}
+				{% for article in articles %}
+				{% if article.title %}<div class="title">{% if article.title_link%}<a href="{{ article.title_link }}" target="_blank">{{ article.title }}</a>{% else %}{{ article.title }}{% endif %}</div>{% endif %}
+				<div class="content">
+				{% ifequal article.format 'markdown' %}
+					{{ article.content_formatted }}
+				{% else %}
+					{% ifequal article.format 'txt' %}
+						{{ article.content|linebreaksbr }}
+					{% else %}
+						{{ article.content }}
+					{% endifequal %}
+				{% endifequal %}
+				<div class="misc">{{ article.created|date:"M-j G:i" }}&nbsp;<a href="/{{ article.title_url }}" class="img">&nbsp;<img src="/static/shared/link.png" border="0" align="absmiddle" alt="Permalink to {{ article.title|escape }}" class="permaicon" />&nbsp;</a></div>
+				</div>
+				{% endfor %}
+				{% if page_archive %}
+				{% else %}
+				{% if articles_total %}
+				<div class="footer"><a href="/archive">Previous Articles</a></div>
+				{% endif %}
+				{% endif %}
+			</div>
+{% include 'footer.html' %}

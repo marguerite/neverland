@@ -1,0 +1,191 @@
+@charset "utf-8"
+
+/*
+	Neverland for Project Picky
+	
+	Author: Marguerite.Su <i@marguerite.su>
+	Web: http://p.marguerite.su
+
+*/
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+h2 {
+	font-size: 16px;
+	line-height: 16px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 0px;
+}
+
+a:link, a:visited, a:active {
+	color: #5baddc;
+	text-decoration: none;
+	border-bottom: 1px dotted #5baddc;
+}
+
+a:hover {
+	color: #4a630f;
+	text-decoration: none;
+	border-bottom: 1px dotted #c0caaa;
+}
+
+code {
+	font-family: Panic Sans, Luxi Mono, "Courier New", Monaco;
+}
+
+/* Header */
+#header {
+	width: 80%;
+	margin: -13px auto 40px auto;
+	padding: 0 15px;
+	background: rgba(255,255,255,.5);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-style: none solid solid solid;
+	border-color: white;
+	border-width: 1px;
+	}
+#header h1 {
+	font-size: 16pt;
+	font-weight: normal;
+	}
+
+/* Inner */
+.header {
+	font-size: 10px;
+	line-height: 10px;
+	color: #aaa;
+	margin-bottom: 5px;
+}
+
+.footer {
+	font-size: 12px;
+	line-height: 12px;
+	color: #aaa;
+	margin-top: 5px;
+}
+
+.title {
+	font-size: 16px;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+.content {
+	font-size: 14px;
+	line-height: 22px;
+	color: #333;
+	text-align: left;
+	padding-left: 15px;
+	margin-bottom: 40px;
+}
+
+.content .misc {
+	font-size: 10px;
+	line-height: 10px;
+	color: #aaa;
+	text-align: right;
+	margin-top: 10px;
+}
+
+.content blockquote {
+	border-left: 1px solid #ccc;
+	padding-left: 15px;
+	margin-left: 0px;
+}
+
+.content ul, .content ol {
+	padding-left: 18px;
+	margin-left: 0px;
+}
+
+.content img {
+	border: none;
+	padding: 2px;
+	background-color: rgba(255,255,255,0.8);
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.15);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.content img.plain {
+	border: none;
+	padding: 0px;
+	background-color: transparent;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-border-radius: none;
+	-webkit-border-radius: none;
+	border-radius: none;
+}
+
+.content .permaicon {
+	border: none;
+	padding: 0px 5px 0px 5px;
+	background-color: transparent;
+}
+
+.content .permaicon:hover {
+	border: none;
+	padding: 0px 5px 0px 5px;
+	background-color: rgba(255,255,255,0.8);
+}
+
+#Footer {
+	color: #999;
+	text-align: left;
+	font-size: 10px;
+	width: 80%;
+	margin: 40px auto 0 auto;
+	padding: 15px;
+	background: rgba(255,255,255,.5);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-style: solid solid none solid;
+	border-color: white;
+	border-width: 1px;	
+}
+
+a.dark:link, a.dark:visited, a.dark:active {
+	color: #999;
+	text-decoration: none;
+	border: none;
+}
+
+a.dark:hover {
+	color: #666;
+	text-decoration: underline;
+	border: none;
+}
+
+a.img {
+	border: none;
+}
+
+.code {
+	padding: 3px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	width: 550px;
+	height: 100px;
+	font-size: 14px;
+	color: #000;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	font-family: "Panic Sans", Luxi Mono, "Courier New", Monaco;
+	overflow-x: hidden;
+}
+
+.code:focus {
+	border: 1px solid #999;
+}
