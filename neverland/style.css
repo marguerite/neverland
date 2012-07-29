@@ -7,15 +7,15 @@ Version: 2.0
 /* -- marguerite color manage */
 body {
 	font-family: 'Open Sans', sans-serif;
-	color: #636363;
+	color: #2e3436;
 	}
-abbr, textarea, input[type="text"], a:link, a:visited, #site-title a:hover, 
-.entry-content p a, #wp-calendar caption, #site-info a:hover,
+#site-title a, #site-info a, abbr, textarea, input[type="text"], a:link, a:visited,
+.entry-content p a, #wp-calendar caption,
 .comment-author cite, .recent-comment p a:hover{
-	color: #5baddc;
+	color: #0068c6;
 	}
 	/* -- links need normal text color-- */
-#site-title a, #access a, #site-info a, .recent-comment p a, 
+#access a, .recent-comment p a, 
 .widget_recent_entries ul li a, .widget_links ul li a,
 .widget_meta ul li a, .entry-title a
 {
@@ -49,7 +49,7 @@ strong {
 	font-weight: bold;
 }
 abbr {
-	border-bottom: 1px dotted #5baddc;
+	border-bottom: 1px dotted #0068c6;
 }
 input[type="text"],
 textarea {
@@ -79,7 +79,7 @@ a:link,a:visited{
 	float: left;
 	width: 55%;
 	margin-left: 5%;
-	border-left: 1px solid #5baddc;
+	border-left: 1px solid #0068c6;
 	position: relative;
 	}
 .categorytree:after {
@@ -90,7 +90,7 @@ a:link,a:visited{
 	left: -1px;
 	bottom: 0;
 	border: 5px solid;
-	border-color: #5baddc transparent transparent #5baddc;
+	border-color: #0068c6 transparent transparent #0068c6;
 	}
 #primary,
 #secondary {
@@ -139,6 +139,7 @@ a:link,a:visited{
         margin-top:5px;
 }
 #site-title a:hover {
+	color: #00407a;
 	background-position: 0 -46px;
 	}
 #site-title a {
@@ -195,7 +196,7 @@ a:link,a:visited{
 	width: 100%;
 }
 #access a:hover {
-	background-color: #5baddc;
+	background-color: #0068c6;
 	-moz-border-radius-bottomleft: 5px;
 	-moz-border-radius-bottomright: 5px;
 	border-bottom-left-radius: 5px;
@@ -253,7 +254,7 @@ a:link,a:visited{
 	background: url(images/blockquote-right.png) no-repeat bottom right;
 	}
 .entry-content p a {
-	border-bottom: 1px dotted #5baddc;
+	border-bottom: 1px dotted #0068c6;
 	margin: 0 2px;
 	padding-right: 13px;
 	background: url(images/link.png) no-repeat top right;
@@ -403,7 +404,7 @@ a.author {
 	margin: 0 auto 25px auto;
 	height: 32px;
 	width: 50%;
-	border-bottom: 1px solid #5baddc;
+	border-bottom: 1px solid #0068c6;
 	}
 .nav-previous a, .nav-next a {
 	display: inline-block;
@@ -531,7 +532,7 @@ h3#comments-title {
 	text-align: center;
 	display: inline-block;
 	color: white;
-	background-color: #5baddc;
+	background-color: #0068c6;
 	position: relative;
 	}
 #respond label[for=url]:after, #respond label[for=author]:after, #respond label[for=email]:after {
@@ -542,12 +543,12 @@ h3#comments-title {
 	left: 60px;
 	top: 8px;
 	border: 5px solid;
-	border-color: transparent transparent transparent #5baddc;
+	border-color: transparent transparent transparent #0068c6;
 	}
 #respond label[for=comment]{
 	width: 98%;
 	color: white;
-	background-color: #5baddc;
+	background-color: #0068c6;
 	border-radius: 3px 3px 0 0;
 	padding: 3px 8px 3px 4px;
 	margin-bottom: -2px;
@@ -563,11 +564,11 @@ h3#comments-title {
 	left: 49%;
 	top: 22px;
 	border: 5px solid;
-	border-color: #5baddc transparent transparent transparent;
+	border-color: #0068c6 transparent transparent transparent;
 	}
 input[type=submit] {
 	color: white;
-	background-color: #5baddc;
+	background-color: #0068c6;
 	border-radius: 5px;
 	border: none;
 	padding: 3px 5px;
@@ -610,7 +611,7 @@ input[type=submit] {
 	height: 34px;
 	border: none;
 	border-radius: 0 3px 3px 0;
-	background-color: #5baddc;
+	background-color: #0068c6;
 	margin-left:-1%;
 	padding: 0;
 	}
@@ -642,7 +643,7 @@ input[type=submit] {
 }
 #wp-calendar thead th {
 	color: #fff;
-	background-color: #5baddc;
+	background-color: #0068c6;
 	border-top: 1px solid #fff;
 }
 #wp-calendar thead th:first-child{
@@ -703,6 +704,7 @@ input[type=submit] {
 	background-position: 0 -14px;
 }
 #site-info a:hover {
+	color: #00407a;
 	background-position: 0 -60px;
 	}
 #site-generator {
@@ -766,7 +768,7 @@ li.recent-comment {
 	}
 .dropdown_categories select {
 	-webkit-appearance: none;
-   background-color: #5baddc;	
+   background-color: #0068c6;	
    color: white;
    border: none;
 	}
@@ -789,7 +791,7 @@ li.recent-comment {
 	}
 ::-webkit-scrollbar-thumb {
 	border-radius: 10px;
-	background-color: #5baddc;
+	background-color: #0068c6;
 	box-shadow: inset 0 0 3px rgba(0,0,0,.25);
 	}
 	
@@ -799,12 +801,12 @@ li.recent-comment {
 	margin-bottom: 50px;
 	}
 .categorytree h1 {
-	background-color: #5baddc;
+	background-color: #0068c6;
 	color: white;
 	padding: 0 15px;
 	}
 .categorytree h2 {
-	border-bottom: 1px solid #5baddc;
+	border-bottom: 1px solid #0068c6;
 	width: 90%;
 	position: relative;
 	padding: 0 15px;
@@ -817,7 +819,7 @@ li.recent-comment {
 	left: 100%;
 	bottom: -1px;
 	border: 5px solid;
-	border-color: transparent transparent #5baddc #5baddc;
+	border-color: transparent transparent #0068c6 #0068c6;
 	}
 .categorytree .entry-utility {
 	padding: 0 15px;
@@ -837,7 +839,7 @@ table.bar-chart {
 .bar-chart td.cat_bar {
 	display: inline-block;
 	width: 10px;
-	background-color: #5baddc;
+	background-color: #0068c6;
 	margin: 0 0 5px 5px;
 	vertical-align: bottom;
 	text-align: center;

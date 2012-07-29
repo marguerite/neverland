@@ -13,6 +13,10 @@ body {
 	margin: 0px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	color: #304a87;
+}
+
 h2 {
 	font-size: 16px;
 	line-height: 16px;
@@ -22,20 +26,20 @@ h2 {
 }
 
 a:link, a:visited, a:active {
-	color: #5baddc;
+	color: #0068c6;
 	text-decoration: none;
-	border-bottom: 1px dotted #5baddc;
+	border-bottom: 1px dotted #0068c6;
 }
 
 a:hover {
-	color: #d9531e;
+	color: #00407A;
 	text-decoration: none;
-	border-bottom: 1px dotted #d9531e;
+	border-bottom: 1px dotted #00407A;
 }
 
 pre {
-	color: #eee;
-	background-color: #3a3a3a;
+	color: #d3d7cf;
+	background-color: #4e5051;
 	width:	100%;
 	margin:	0 auto;
 	padding: 3px 5px;
@@ -59,16 +63,25 @@ pre {
 #header h1 {
 	font-size: 16pt;
 	font-weight: normal;
-	margin-top: 0;
+	margin-top: 5px;
 	}
 
-/* Inner */
-.header {
-	font-size: 10px;
-	line-height: 10px;
-	color: #aaa;
-	margin-bottom: 5px;
+#header a {
+	display: inline-block;
+	width: 380px;
+	height: 46px;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	border-bottom: none;
+	background: url(images/title.png) no-repeat;
+	background-position: 0 -46px;
 }
+
+#header a:hover {
+	background-position: 0 0;
+}
+
+/* Inner */
 
 .footer {
 	font-size: 12px;
@@ -77,16 +90,15 @@ pre {
 	margin-top: 5px;
 }
 
-.title {
-	font-size: 16px;
-	margin-bottom: 10px;
-	color: #333;
+.slogan {
+	font-size: 10px;
+	color: #2e3436;
 }
 
 .content {
 	font-size: 14px;
 	line-height: 22px;
-	color: #333;
+	color: #2e3436;
 	text-align: left;
 	padding-left: 15px;
 	margin-bottom: 40px;
@@ -170,7 +182,7 @@ pre {
 }
 
 #Footer {
-	color: #999;
+	color: #888;
 	text-align: left;
 	font-size: 10px;
 	width: 80%;
@@ -187,7 +199,7 @@ pre {
 }
 
 a.dark:link, a.dark:visited, a.dark:active {
-	color: #999;
+	color: #888;
 	text-decoration: none;
 	border: none;
 }
