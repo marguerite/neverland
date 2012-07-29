@@ -56,17 +56,12 @@
 			var width = $(this).width();
 			var height = $(this).height();
 			var lineheight = $(this).css("width");
-			var parentheight = $(this).parent().height();
 			$(this).data("heightsave",height);
 			   $(this).width(width);
 				$(this).height(width);
-				$(this).css({"display":"inline-block","background-color":"#5baddc","color":"white"});
+				$(this).css({"display":"inline-block","background-color":"#0068c6","color":"white"});
 				$(this).css({"border-radius":width*1.2/2,"line-height":lineheight});
 				$(this).css({"padding":width*0.1});
-				// 它父元素下面的元素就不会跳来跳去了
-				$(this).parent().height(parentheight);
-				// 通过让它的父元素相对，它自己和兄弟元素都绝对，来让兄弟元素不跳
-				$(this).parent().css("position","relative");
 				// 处理她自己的位置，让它原地缩放
 				var top = $(this).position().top - (width*1.2 - height)/2;
 				var left = $(this).position().left - width*0.1;
@@ -77,11 +72,9 @@
 			},function(){
 				$(this).height($(this).data("heightsave"));
 				$(this).css({"display":"","background-color":"","color":"","line-height":"","border-radius":"","padding":""});
-				$(this).parent().height();
 				// 删除占位元素
 				$(this).parent().children(".brick").remove();
 				$(this).css({"position":"","z-index":"","top":"","left":""});
-				$(this).parent.css("position","");
 				}
 		);
 		// 图片的 instagram 特效
@@ -142,6 +135,12 @@
 		// 匹配「KDE提交摘要*」，把它的 p 换成外面包上 ul li
 			$(".post").each(function(){
 				if ( $(this).children(".entry-title").children("a").text().match('KDE.*\\(\\d{4}\\/\\d{1,2}\\/\\d{1,2}\\)') != null ) {
+					var content = $(this).children(".entry-content");
+            		var html = content.html();
+            		html = html.replace(/<p>/g,"<ul><li>").replace(/<\/p>/g,"</li></ul>").replace(/<br>/g,"</li><li>");
+            		content.html(html);
+				}
+				if ( $(this).children(".entry-title").text().match('KDE.*\\(\\d{4}\\/\\d{1,2}\\/\\d{1,2}\\)') != null ) {
 					var content = $(this).children(".entry-content");
             		var html = content.html();
             		html = html.replace(/<p>/g,"<ul><li>").replace(/<\/p>/g,"</li></ul>").replace(/<br>/g,"</li><li>");
