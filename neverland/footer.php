@@ -52,7 +52,7 @@
 				}
 			);
 		// 标签云的正圆
-		$(".tagcloud a").hover(function(){
+/*		$(".tagcloud a").hover(function(){
 			var width = $(this).width();
 			var height = $(this).height();
 			var lineheight = $(this).css("width");
@@ -76,7 +76,41 @@
 				$(this).parent().children(".brick").remove();
 				$(this).css({"position":"","z-index":"","top":"","left":""});
 				}
-		);
+		)};*/
+    $(".tagcloud a").each(function(i, obj){
+
+        var clone;
+        var position;
+        clone = $(obj).clone();
+
+        var cloneWidth = $(obj).width();
+        var cloneHeight = $(obj).height();
+
+        $(clone).addClass("clonedItem");
+        position = $(obj).position();
+
+        $(obj).bind("mouseover", function(e){
+
+				$(clone).css({"display":"inline-block","background-color":"#0068c6","color":"white"});
+
+            $(clone).css("height", cloneWidth).css("width", cloneWidth).css("z-index", 1000).css("line-height", cloneWidth + 'px');
+
+            $(clone).css("top", position.top - (cloneWidth*1.2 - cloneHeight) / 2).css("left", position.left - cloneWidth*0.1);
+
+            //背景radius
+            $(clone).css("padding",cloneWidth*0.1).css("border-radius", cloneWidth*1.2 / 2 + 'px').css("-webkit-border-radius", cloneWidth*1.2 / 2 + 'px').css("-khtml-border-radius", cloneWidth*1.2 / 2 + 'px').css("-moz-border-radius", cloneWidth*1.2 / 2 + 'px');
+
+            $(clone).appendTo(".tagcloud").css("position", "absolute");
+
+            $(clone).bind("mouseout", function(e){
+                $(".clonedItem").remove(); //防止鼠标过快移动无法清除一些背景
+                $(clone).remove();
+            });
+
+        }); 
+
+    }); // end each
+
 		// 图片的 instagram 特效
 			// 去掉继承的链接箭头
 			$(window).load(function(){
