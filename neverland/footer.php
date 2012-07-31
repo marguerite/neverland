@@ -51,65 +51,6 @@
 					$(this).children("a").css("color","");
 				}
 			);
-		// 标签云的正圆
-/*		$(".tagcloud a").hover(function(){
-			var width = $(this).width();
-			var height = $(this).height();
-			var lineheight = $(this).css("width");
-			$(this).data("heightsave",height);
-			   $(this).width(width);
-				$(this).height(width);
-				$(this).css({"display":"inline-block","background-color":"#0068c6","color":"white"});
-				$(this).css({"border-radius":width*1.2/2,"line-height":lineheight});
-				$(this).css({"padding":width*0.1});
-				// 处理她自己的位置，让它原地缩放
-				var top = $(this).position().top - (width*1.2 - height)/2;
-				var left = $(this).position().left - width*0.1;
-				$(this).css({"position":"absolute","z-index":"999","top":top,"left":left});
-				// 在它的下方放一个和它同样寬高的元素来占位，让兄弟元素不跑到它下面
-				$(this).after('<a class="brick"></a>');
-				$(this).parent().children(".brick").css({"width":width,"height":height,"display":"inline-block"});
-			},function(){
-				$(this).height($(this).data("heightsave"));
-				$(this).css({"display":"","background-color":"","color":"","line-height":"","border-radius":"","padding":""});
-				// 删除占位元素
-				$(this).parent().children(".brick").remove();
-				$(this).css({"position":"","z-index":"","top":"","left":""});
-				}
-		)};*/
-    $(".tagcloud a").each(function(i, obj){
-
-        var clone;
-        var position;
-        clone = $(obj).clone();
-
-        var cloneWidth = $(obj).width();
-        var cloneHeight = $(obj).height();
-
-        $(clone).addClass("clonedItem");
-        position = $(obj).position();
-
-        $(obj).bind("mouseover", function(e){
-
-				$(clone).css({"display":"inline-block","background-color":"#0068c6","color":"white"});
-
-            $(clone).css("height", cloneWidth).css("width", cloneWidth).css("z-index", 1000).css("line-height", cloneWidth + 'px');
-
-            $(clone).css("top", position.top - (cloneWidth*1.2 - cloneHeight) / 2).css("left", position.left - cloneWidth*0.1);
-
-            //背景radius
-            $(clone).css("padding",cloneWidth*0.1).css("border-radius", cloneWidth*1.2 / 2 + 'px').css("-webkit-border-radius", cloneWidth*1.2 / 2 + 'px').css("-khtml-border-radius", cloneWidth*1.2 / 2 + 'px').css("-moz-border-radius", cloneWidth*1.2 / 2 + 'px');
-
-            $(clone).appendTo(".tagcloud").css("position", "absolute");
-
-            $(clone).bind("mouseout", function(e){
-                $(".clonedItem").remove(); //防止鼠标过快移动无法清除一些背景
-                $(clone).remove();
-            });
-
-        }); 
-
-    }); // end each
 
 		// 图片的 instagram 特效
 			// 去掉继承的链接箭头
@@ -182,6 +123,69 @@
 				}
 			});
 		});
+	
+	// 标签云的正圆
+	$("a[class^=tag-link]").each(function(i, obj){
+
+		var clone;
+		var position;
+		clone = $(obj).clone();
+
+		/*
+		//得到clone的宽度并增加一些呼吸空间
+		var cloneWidth = $(obj).width() + 20;
+		var cloneHeight = $(obj).height() + 20;
+		*/
+		
+		/* 算法说明
+			首先圆有宽度 10% 的 padding，这样两边一共是 20%，圆的实际宽度是 cloneWidth*1.2;
+			elements 的 position 都是取最左上角一点的。于是要让圆看起来位置没变化：
+			它的宽度就应该往左移动 cloneWidth*0.1;
+			高度有点复杂，它应该向上移动 (现在的圆高度/2 - 原来的高度/2 );
+			现在的圆高度由于有 padding，是 cloneHeight*1.2;
+			原来的高度是 cloneHeight;
+			但是原来的 element 是个长方形，现在的 element 是个圆，直径等于 cloneWidth*1.2;
+			因为有 css("height", cloneWidth)，刚克隆来的原来的高度被抹掉了，于是我们需要一个变量来记住它:
+			$(clone).data("heightsave",cloneHeight);
+			以上，圆的 position 调整变为：
+			top = position.top - (cloneWidth*1.2 - $(clone).data("heightsave"))/2;
+			left = position.left - cloneWidth*0.1;
+		*/
+		
+		var cloneWidth = $(obj).width();
+		var cloneHeight = $(obj).height();
+		$(clone).data("heightsave",cloneHeight);
+		
+		$(clone).addClass("clonedItem");
+		position = $(obj).position();
+
+	    $(obj).bind("mouseover", function(e){
+
+			$(".tagcloud a").css("z-index","1");
+
+			$(clone).css("height", cloneWidth).css("width", cloneWidth).css("z-index", 1000).css("line-height", cloneWidth + 'px');
+			$(clone).css({"background-color":"#0068c6","color":"white"});
+			
+			//clone 的 padding+radius
+			$(clone).css("padding", cloneWidth*0.1).css("border-radius", cloneWidth*1.2 / 2 + 'px').css("-webkit-border-radius", cloneWidth*1.2 / 2 + 'px').css("-khtml-border-radius", cloneWidth*1.2 / 2 + 'px').css("-moz-border-radius", cloneWidth*1.2 / 2 + 'px');
+			
+			//clone 的 position
+			$(clone).css("top", position.top - (cloneWidth*1.2 - $(clone).data("heightsave"))/2);
+			$(clone).css("left", position.left - cloneWidth*0.1);
+			
+			$(clone).appendTo($(this).parents(".tagcloud")).css("position", "absolute");
+			
+
+			$(clone).bind("mouseout", function(e){
+				$(".clonedItem").remove(); //防止鼠标过快移动无法清除一些背景
+				$(clone).remove();
+				// 清除 z-index
+				$(".tagcloud a").css("z-index","");
+			});
+
+	    }); 
+
+	}); // end each
 </script>
 <!-- syntax highlight -->
 <script type="text/javascript" src="http://localhost/wordpress/wp-content/themes/kde-breathe/js/jquery.snippet.js"></script>
