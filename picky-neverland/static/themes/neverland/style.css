@@ -74,11 +74,11 @@ pre {
 	padding-left: 20px;
 	border-bottom: none;
 	background: url(images/title.png) no-repeat;
-	background-position: 0 -46px;
+	background-position: 0 0;
 }
 
 #header a:hover {
-	background-position: 0 0;
+	background-position: 0 -46px;
 }
 
 /* Inner */
