@@ -347,10 +347,8 @@ a.author {
 background:url(images/author.png) no-repeat;
 }
 
-.entry-utility a[rel=category],.entry-utility a[rel=tag],.entry-utility .permalink,.comments-link a {
-display:inline-block;
+.entry-utility a[rel=category],.entry-utility a[rel=tag],.entry-utility .permalink,.archive .comments-link a {
 padding-left:20px;
-height:16px;
 }
 
 .entry-utility a[rel=category] {
@@ -365,7 +363,7 @@ background:url(images/tag.png) no-repeat;
 background:url(images/permalink.png) no-repeat;
 }
 
-.comments-link a {
+.archive .comments-link a {
 background:url(images/comment.png) no-repeat;
 }
 
