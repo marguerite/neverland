@@ -38,7 +38,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="http://localhost/wordpress/wp-content/themes/kde-breathe/js/jquery.snippet.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 
 <?php
@@ -68,8 +68,8 @@
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 			</div> <!-- #access -->
 				<div id="subscribe">
-					<a class="rss"></a>
-					<a class="twitter"></a>
-					<a class="gplus"></a>
+					<a class="rss" href="http://ikde.org/feed/"></a>
+					<a class="twitter" href="https://twitter.com/#!/ikde_org/"></a>
+					<a class="gplus" href="https://plus.google.com/103630450909014790042/posts"></a>
 				</div>
 	</div><!-- #header -->

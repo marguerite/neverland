@@ -188,12 +188,12 @@
 	}); // end each
 </script>
 <!-- syntax highlight -->
-<script type="text/javascript" src="http://localhost/wordpress/wp-content/themes/kde-breathe/js/jquery.snippet.js"></script>
-<script type="text/javascript" src="http://localhost/wordpress/wp-content/themes/kde-breathe/js/sh_changelog.js"></script>
-<script type="text/javascript" src="http://localhost/wordpress/wp-content/themes/kde-breathe/js/sh_desktop.js"></script>
-<script type="text/javascript" src="http://localhost/wordpress/wp-content/themes/kde-breathe/js/sh_log.js"></script>
-<script type="text/javascript" src="http://localhost/wordpress/wp-content/themes/kde-breathe/js/sh_makefile.js"></script>
-<script type="text/javascript" src="http://localhost/wordpress/wp-content/themes/kde-breathe/js/sh_spec.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/sh_changelog.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/sh_desktop.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/sh_log.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/sh_makefile.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/sh_spec.js"></script>
 <script>
 	$(document).ready(function(){
 			$("pre.spec").snippet("spec",{style:"acid"});
