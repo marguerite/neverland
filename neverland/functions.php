@@ -199,13 +199,15 @@ function twentyten_comment( $comment, $args, $depth ) {
 			<br />
 		<?php endif; ?>
       <div class="comment-body">
-		<div class="comment-meta"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-			<?php
+		<div class="comment-meta">
+			<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+			  <?php
 				/* translators: 1: date, 2: time */
-				printf( __( '%1$s at %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' );
-			?>
-		</div><!-- .comment-meta -->
-		 <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				printf( __( '%1$s at %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?>
+			</a>
+			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+			<?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' );?>
+			</div><!-- .comment-meta -->
 			
         <?php comment_text(); ?>
 

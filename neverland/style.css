@@ -439,15 +439,6 @@ margin-bottom:0;
 margin:5px;
 }
 
-.commentlist li a.comment-reply-link {
-display:inline-block;
-float:right;
-width:17px;
-margin-right:15px;
-background:url(images/reply.png) no-repeat;
-text-indent:-9999px;
-}
-
 .comment-body {
 display:block;
 margin-left:12%;
