@@ -16,7 +16,7 @@ $(document).ready(function(){
 	// 图片的 instagram 特效
 	// 去掉继承的链接箭头
 	$(window).load(function(){
-		$(".entry-content img").each(function(){
+		$(".entry-content img:not(.wp-smiley)").each(function(){
 			var image_width = $(this).width();
 			var image_height = $(this).height();
 		// 默认缩放图片
