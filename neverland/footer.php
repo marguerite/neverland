@@ -186,6 +186,8 @@
 	    }); 
 
 	}); // end each
+	// 删除 translate 插件那条奇丑无比的线
+	$(".translate_hr").remove();
 </script>
 <!-- syntax highlight -->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.js"></script>
