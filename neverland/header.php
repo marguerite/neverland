@@ -39,16 +39,14 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"/>
-<!-- Syntax Highlight -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.js"/>
-<script src="<?php echo get_template_directory_uri(); ?>/js/sh_changelog.js"/>
-<script src="<?php echo get_template_directory_uri(); ?>/js/sh_desktop.js"/>
-<script src="<?php echo get_template_directory_uri(); ?>/js/sh_log.js"/>
-<script src="<?php echo get_template_directory_uri(); ?>/js/sh_makefile.js"/>
-<script src="<?php echo get_template_directory_uri(); ?>/js/sh_spec.js"/>
-<!-- Neverland Main JS -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/neverland.js"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/sh_changelog.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/sh_desktop.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/sh_log.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/sh_makefile.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/sh_spec.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/neverland.js"></script>
 
 <?php
 	/* We add some JavaScript to pages with the comment form

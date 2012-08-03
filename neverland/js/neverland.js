@@ -20,9 +20,9 @@ $(document).ready(function(){
 			var image_width = $(this).width();
 			var image_height = $(this).height();
 		// 默认缩放图片
-		if( image_width > 300) {
-			$(this).width(300);
-			$(this).height(image_height*(300/image_width));
+		if( image_width > 400) {
+			$(this).width(400);
+			$(this).height(image_height*(400/image_width));
 			//鼠标划过回归原来大小
 			/* $(this).hover(function(){
 				$(this).width(image_width);
