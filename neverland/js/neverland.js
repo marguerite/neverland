@@ -12,36 +12,6 @@ $(document).ready(function(){
 				$(this).children("a").css("color","");
 			}
 		);
-
-	// 图片的 instagram 特效
-	// 去掉继承的链接箭头
-	$(window).load(function(){
-		$(".entry-content img:not(.wp-smiley)").each(function(){
-			var image_width = $(this).width();
-			var image_height = $(this).height();
-		// 默认缩放图片
-		if( image_width > 400) {
-			$(this).width(400);
-			$(this).height(image_height*(400/image_width));
-			//鼠标划过回归原来大小
-			/* $(this).hover(function(){
-				$(this).width(image_width);
-				$(this).height(image_height);
-			},function(){
-				$(this).width(300);
-				$(this).height(image_height*(300/image_width));
-			}); */
-		}
-
-		// 缩放后的图片如果父元素没有链接就给它加上到 src 的链接
-		var href = $(this).attr("src");
-		if ($(this).parent("a").length <= 0) {
-			$(this).wrap('<a href="'+href+'"> </a>');
-		}
-		$(this).parent().css({"background":"none","border":"none","margin":"0","padding":"0"});
-		$(this).css("padding","10px 10px 25px 10px");
-		});
-	});
 	
 	// 相册
 	// 删除分列用的 <br>
