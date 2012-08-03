@@ -80,6 +80,7 @@ color:#c09;
 
 .content {
 width:55%;
+min-width: 500px; // temp solution for mobile, remove when mobile theme
 float:left;
 margin-left:5%;
 margin-bottom:5%;
@@ -249,7 +250,7 @@ padding:12px 0 0;
 margin-bottom:12px;
 }
 
-.entry-content a {
+.entry-content a, .comment-body p a {
 color:#0068c6;
 border-bottom:1px dotted #0068c6;
 padding-right:13px;

@@ -31,13 +31,16 @@ $(document).ready(function(){
 	});
 
 	// 放大镜
+	// 初始化
+	$(".entry-content img:not(.wp-smiley)").each(function() {
+	$(this).parent().append('<div class="mag"></div>');
+	$(".mag").css({"width":"150px","height":"150px","position":"absolute","border-radius":"100%"});
+	$(".mag").css("box-shadow","0 0 0 7px rgba(255,255,255,.85),0 0 7px 7px rgba(0,0,0,.25),inset 0 0 40px 2px rgba(0,0,0,.25)");
+	$(this).next(".mag").css("background","url("+$(this).parent().attr("href")+") no-repeat");
+	$(".mag").css("display","none");
+	});
 	
 	$(".entry-content img:not(.wp-smiley)").mousemove(function(e){
-		//Initial Magnifier
-		$(this).parent("a").append('<div class="mag"></div>');
-		$(".mag").css({"width":"150px","height":"150px","position":"absolute","border-radius":"100%"});
-		$(".mag").css("box-shadow","0 0 0 7px rgba(255,255,255,.85),0 0 7px 7px rgba(0,0,0,.25),inset 0 0 40px 2px rgba(0,0,0,.25)");
-		$(".mag").css("background","url("+$(this).parent().attr("href")+") no-repeat");
 
 		var ratiotop = (e.pageY - $(this).position().top)/$(this).height()*100;
 		var ratioleft = (e.pageX - $(this).position().left)/$(this).width()*100;
@@ -46,13 +49,6 @@ $(document).ready(function(){
 		var px = e.pageX - $(".mag").width()/2;
 		var py = e.pageY - $(".mag").height()/2;
 		
-		$(".mag").css({"background-position":bgp,"top":py,"left":px});
-		/*
-		if(ratiotop >= 0 && ratiotop <= 100 && ratioleft >= 0 && ratioleft <= 100){
-			$(".mag").fadeIn(100);
-		} else {
-			$(".mag").fadeOut(100);
-			$(this).parent().child(".mag").remove();
-		}*/
+		$(this).next(".mag").css({"background-position":bgp,"top":py,"left":px,"display":""});
 	});
 });

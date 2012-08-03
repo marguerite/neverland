@@ -324,14 +324,14 @@ add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
 
 /* Add a new Recent Comments widget with avatars */
 if(function_exists('register_sidebar_widget'))
-	register_sidebar_widget(__('带头像的近期评论'),'marguerite_recent_avatar_comments');
+	register_sidebar_widget(__('Recent Comments with Avatars'),'marguerite_recent_avatar_comments');
 
 function marguerite_recent_avatar_comments() {
 global $wpdb;
 $sql = "SELECT * from $wpdb->comments WHERE comment_approved= '1' AND comment_type != 'pingback'
     ORDER BY comment_date DESC LIMIT 0 ,8";
 $comments = $wpdb->get_results($sql);
-$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">近期评论</h3>";
+$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">What's up buddy?</h3>";
 $output .= "<ul>";
 foreach ($comments as $comment) {
 $output .= "<li class=\"recent-comment\">";
@@ -359,12 +359,12 @@ function marguerite_avatar($avatar_defaults) {
 	
 /* Dropdown Categories */
 if(function_exists('register_sidebar_widget'))
-	register_sidebar_widget(__('下拉式分类列表'),'marguerite_dropdown_categories');
+	register_sidebar_widget(__('Dropdown Categories'),'marguerite_dropdown_categories');
 	
 function marguerite_dropdown_categories() {
 $select = wp_dropdown_categories('show_option_none=Select Category&show_count=1&orderby=name&echo=0&selected=6');
 $select = preg_replace("#<select([^>]*)>#", "<select$1 onchange='return this.form.submit()'>", $select);
-$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">分类目录</h3>";
+$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">Categories</h3>";
 $output .= "<form class=\"dropdown_categories\" action=\"". get_bloginfo('url')."\" method=\"get\">";
 $output .= $select;
 $output .= "<noscript><input type=\"submit\" value=\"View\" /></noscript></form></li>";
@@ -373,7 +373,7 @@ echo $output;
 
 /* Categories bar chart */
 if(function_exists('register_sidebar_widget'))
-	register_sidebar_widget(__('柱状分类'),'marguerite_bar_cat');
+	register_sidebar_widget(__('Bar Categories'),'marguerite_bar_cat');
 	
 function marguerite_bar_cat() {
 	global $wpdb;
@@ -396,7 +396,7 @@ function marguerite_bar_cat() {
 
 /* Monthly Archives */
 if(function_exists('register_sidebar_widget'))
-	register_sidebar_widget(__('月度存档'),'marguerite_monthly_archives');
+	register_sidebar_widget(__('Monthly Bar Archives'),'marguerite_monthly_archives');
 
 function marguerite_monthly_archives() {
 	global $wpdb,$wp_locale;
