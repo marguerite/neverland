@@ -74,6 +74,10 @@ padding-right:20px;
 background:url(images/blockquote-right.png) no-repeat bottom right;
 }
 
+del {
+color:#c09;
+}
+
 .content {
 width:55%;
 float:left;
@@ -257,10 +261,6 @@ margin:0 2px;
 border:none;
 padding-right:0;
 background:none;
-}
-
-.entry-content del {
-color:#c09;
 }
 
 .entry-content ul li {
