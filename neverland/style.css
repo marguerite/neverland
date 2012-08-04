@@ -385,6 +385,7 @@ min-height:457px;
 
 .entry-content img:not(.wp-smiley) {
 max-width: 500px;
+max-height: 281.25px;
 background-color:#fafafa;
 border:1px solid #bcbcbc;
 box-shadow:0 1px 4px rgba(0,0,0,.25);
