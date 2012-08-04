@@ -2,6 +2,12 @@ $(document).ready(function(){
     // 放大镜
     // 初始化
     $(".entry-content img:not(.wp-smiley)").each(function() {
+      
+    // 修复可恶的 skydrive
+    if( $(this).parent().attr("href").match(/(https?\:\/\/\w+\.\w+\.livefilestore\.com\/[^ \/]*\/.*\.(jpg|png)\?)psid=1/g) ) {
+        var newhref = $(this).parent().attr("href").replace("?psid=1","");
+        $(this).parent().attr("href",newhref);
+    }
         
     // 添加 DOM 元素
     $(this).parent().append('<div class="mag"></div>');

@@ -30,7 +30,7 @@ $(document).ready(function(){
 			$(this).css("padding","10px 10px 25px 10px");
 		// 处理 nihui 那种自传表情的达人
 			if (image_width < 24) {
-				$(this).css({"backgroud":"none","border":"none","box-shadow":"none","padding":"none"});
+				$(this).css({"backgroud":"none","border":"none","box-shadow":"none","padding":"0"});
 			}
 		});
 	});
