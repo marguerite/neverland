@@ -48,6 +48,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/sh_spec.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/neverland.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/zoom.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/magnifier.js"></script>
 
 <?php
 	/* We add some JavaScript to pages with the comment form
