@@ -12,6 +12,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=320;"/>
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -33,12 +34,15 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
 
 	?></title>
-<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.css"/>
+<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple/iphone.png"/>
+<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/apple/ipad.png"/>
+<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/apple/retina.png"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/sh_changelog.js"></script>

@@ -876,7 +876,7 @@ margin:0 auto;
 
 /* touch phone hack */
 @media only screen and (max-width: 500px) {
-.content {
+.content, .categorytree {
   width: 86%;
 }
 .entry-content img:not(.wp-smiley) {
@@ -888,6 +888,9 @@ margin:0 auto;
 }
 #author, #email {
   width: 74%;
+}
+.not-found #searchform #searchsubmit {
+  width: 20%;
 }
 .widget-area {
   width: 90%;
