@@ -899,3 +899,8 @@ margin:0 auto;
   display: none;
 }
 }
+
+/* lightbox */
+.shutdown_button {
+  background: url(images/shutdown_button.png) no-repeat;
+}
