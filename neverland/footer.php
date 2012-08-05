@@ -17,7 +17,8 @@
 				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php bloginfo( 'name' ); ?>
 				</a>
-           designed by marguerite. Better experience in firefox and webkit.
+				<span>designed by marguerite.</span>
+				<span>Better experience in firefox and webkit.</span>
 			</div><!-- #site-info -->
 
 			<div id="site-generator">
