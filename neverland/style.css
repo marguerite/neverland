@@ -17,7 +17,7 @@ margin:0;
 }
 
 body,input,textarea {
-font-size:12px;
+font-size:10pt;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -316,7 +316,6 @@ padding:15px;
 
 #author-avatar {
 float:left;
-width:15%;
 }
 
 #author-avatar img {
@@ -324,12 +323,8 @@ border-radius:32px;
 -moz-border-radius:32px;
 }
 
-#author-description {
-width:80%;
-}
-
 #author-link {
-margin-left:20%;
+margin-left:60px;
 }
 
 span.date,a.author {
@@ -435,7 +430,7 @@ margin:5px;
 
 .comment-body {
 display:block;
-margin-left:12%;
+margin-left:15%;
 min-height:100px;
 box-shadow:-10px 0 10px -8px rgba(150,150,150,.5);
 }
@@ -443,7 +438,7 @@ box-shadow:-10px 0 10px -8px rgba(150,150,150,.5);
 .comment-author {
 display:block;
 float:left;
-width:10%;
+width:15%;
 margin-top:5px;
 }
 
@@ -454,6 +449,12 @@ border-radius:24px;
 
 .comment-author a {
 display:block;
+}
+
+.comment-author span {
+display: block;
+width: 100%;
+text-align: center;
 }
 
 #comments .pingback:last-child {
@@ -496,29 +497,29 @@ margin-right:30%;
 width:98%;
 }
 
-#respond #author,#respond #email,#respond #url {
+#author,#email,#url {
 border-radius:0 5px 5px 0;
 border-style:solid solid solid none;
 }
 
-#respond label[for=url],#respond label[for=author],#respond label[for=email] {
+label[for=url],label[for=author],label[for=email] {
 border-radius:3px 0 0 3px;
-margin-right:-2px;
-width:50px;
+margin-right:-1%;
+width:20%;
 text-align:center;
 display:inline-block;
 color:#FFF;
 background-color:#0068c6;
 position:relative;
-padding:3px 5px 4px;
+padding:5px 0;
 }
 
-#respond label[for=url]:after,#respond label[for=author]:after,#respond label[for=email]:after {
+label[for=url]:after,label[for=author]:after,label[for=email]:after {
 position:absolute;
 content:'';
 width:0;
 height:0;
-left:60px;
+left:100%;
 top:8px;
 border:5px solid;
 border-color:transparent transparent transparent #0068c6;
@@ -550,9 +551,8 @@ border-color:#0068c6 transparent transparent;
 input[type=submit] {
 color:#FFF;
 background-color:#0068c6;
-border-radius:5px;
 border:none;
-padding:3px 5px;
+padding:5px;
 }
 
 .widget-area {
@@ -595,7 +595,6 @@ padding:0;
 }
 
 #searchform #s {
-width:70%;
 height:32px;
 border-radius:5px 0 0 5px;
 box-shadow:none;
@@ -884,10 +883,16 @@ margin:0 auto;
   max-width: 240px;
   max-height: 135px;
 }
+.required {
+  display: none;
+}
+#author, #email {
+  width: 74%;
+}
 .widget-area {
   width: 90%;
 }
-#site-info span:nth-child(3) {
+#site-info span:nth-child(2) {
   display: none;
 }
 }

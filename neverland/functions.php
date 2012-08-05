@@ -191,8 +191,8 @@ function twentyten_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<div class="comment-author">
-			<?php echo get_avatar( $comment, 40 ); ?>
-			<?php printf( __( '%s', 'twentyten' ), sprintf( '%s', get_comment_author_link() ) ); ?>
+			<span><?php echo get_avatar( $comment, 40 ); ?></span>
+			<span><?php printf( __( '%s', 'twentyten' ), sprintf( '%s', get_comment_author_link() ) ); ?></span>
 		</div><!-- .comment-author -->
 		<?php if ( $comment->comment_approved == '0' ) : ?>
 			<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyten' ); ?></em>
