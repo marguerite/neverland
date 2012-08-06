@@ -904,3 +904,6 @@ margin:0 auto;
 .shutdown_button {
   background: url(images/shutdown_button.png) no-repeat;
 }
+.ghost {
+  background: url(images/ghost.png) no-repeat;
+}

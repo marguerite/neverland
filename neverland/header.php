@@ -44,6 +44,7 @@
 <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/apple/ipad.png"/>
 <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/apple/retina.png"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/bluescreen.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/sh_changelog.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/sh_desktop.js"></script>
