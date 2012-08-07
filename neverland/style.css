@@ -160,7 +160,7 @@ height:46px;
 display:block;
 padding-left:20px;
 background:url(images/title.png) no-repeat;
-background-position:0 0;
+background-size: 32px 92px;
 }
 
 #site-description {
@@ -671,7 +671,8 @@ display:inline-block;
 padding-left:20px;
 height:32px;
 background:url(images/title.png) no-repeat;
-background-position:0 -14px;
+background-size: 32px 92px;
+background-position:0 -14px
 }
 
 #site-info a:hover {
@@ -874,6 +875,15 @@ width:80%;
 margin:0 auto;
 }
 
+/* lightbox */
+.shutdown_button {
+  background: url(images/shutdown_button.png) no-repeat;
+}
+.ghost {
+  background: url(images/ghost.png) no-repeat;
+}
+
+
 /* touch phone hack */
 @media only screen and (max-width: 500px) {
 .content, .categorytree {
@@ -900,10 +910,59 @@ margin:0 auto;
 }
 }
 
-/* lightbox */
-.shutdown_button {
-  background: url(images/shutdown_button.png) no-repeat;
+/* retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+ only screen and (-o-min-device-pixel-ratio: 3/2),
+ only screen and (min--moz-device-pixel-ratio: 1.5),
+ only screen and (min-device-pixel-ratio: 1.5) {
+#site-title a, #site-info a {
+background:url(retina/title.png) no-repeat;
+background-size: 32px 92px;
 }
-.ghost {
-  background: url(images/ghost.png) no-repeat;
+.entry-content a, .comment-body p a {
+background:url(retina/link.png) no-repeat top right;
+background-size: 10px 10px;
+}
+.widget-area ul ul.blogroll {
+list-style-image:url(retina/link.svg);
+}
+.entry-content ol li {
+list-style-image:url(retina/ol.svg);
+}
+
+.entry-content ol li:first-child {
+list-style-image:url(retina/ol-1.svg);
+}
+
+.entry-content ol li:nth-child(2) {
+list-style-image:url(retina/ol-2.svg);
+}
+
+.entry-content ol li:nth-child(3) {
+list-style-image:url(retina/ol-3.svg);
+}
+
+.entry-content ol li:nth-child(4) {
+list-style-image:url(retina/ol-4.svg);
+}
+
+.entry-content ol li:nth-child(5) {
+list-style-image:url(retina/ol-5.svg);
+}
+
+.entry-content ol li:nth-child(6) {
+list-style-image:url(retina/ol-6.svg);
+}
+
+.entry-content ol li:nth-child(7) {
+list-style-image:url(retina/ol-7.svg);
+}
+
+.entry-content ol li:nth-child(8) {
+list-style-image:url(retina/ol-8.svg);
+}
+
+.entry-content ol li:nth-child(9) {
+list-style-image:url(retina/ol-9.svg);
+}
 }
