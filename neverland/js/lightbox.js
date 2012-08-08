@@ -81,22 +81,23 @@ $(document).ready(function() {
 	  $(".photoframe").css({"background-color":"#FAFAFA","padding":"5px"});
 	  
 	  // shutdown button
-	  $(".photoframe").append('<a class="shutdown_button"></a>');
-	  $(".shutdown_button").css({"display":"none","width":"22px","height":"22px"});
-	  $(".shutdown_button").css({"position":"absolute","top":"-11px","right":"-11px"});
+	  $(".photoframe").append('<a class="close"></a>');
+	  $(".close").css({"display":"none","width":"22px","height":"22px"});
+	  $(".close").css({"position":"absolute","top":"-11px","right":"-11px"});
+	  $(".close").css({"background-size":"22px 22px"});
 	  
 	  $(".photoframe").mousemove(function(e){
 	      // 不然太烦人了
 	      var region_top = (e.pageY - $(window).scrollTop() - frame_top)/real_height;
 	      var region_left = (e.pageX - frame_left)/real_width;
 	      if ( region_top < 0.2 & region_left > 0.8 ){
-		    $(".shutdown_button").css("display","block");
+		    $(".close").css("display","block");
 	      } else {
-		    $(".shutdown_button").css("display","none");
+		    $(".close").css("display","none");
 	      }
 	  }); // end mousemove
 	  
-	  $(".shutdown_button").click(function(){
+	  $(".close").click(function(){
 	      $(".mask").remove();
 	  });
 	  

@@ -180,12 +180,12 @@ margin-right:5px;
 padding:none;
 }
 
-#subscribe a.rss {
-background-image:url(images/rss.png);
+#subscribe a:hover {
+background-position:0 -32px;
 }
 
-#subscribe a.rss:hover,#subscribe a.twitter:hover,#subscribe a.gplus:hover {
-background-position:0 -32px;
+#subscribe a.rss {
+background-image:url(images/rss.png);
 }
 
 #subscribe a.twitter {
@@ -693,6 +693,10 @@ width:32px;
 height:32px;
 }
 
+#site-generator a:hover {
+background-position: 0 -32px;
+}
+
 #site-generator a.wordpress {
 background:url(images/wordpress.png);
 }
@@ -876,8 +880,8 @@ margin:0 auto;
 }
 
 /* lightbox */
-.shutdown_button {
-  background: url(images/shutdown_button.png) no-repeat;
+.close {
+  background: url(images/close.png) no-repeat;
 }
 .ghost {
   background: url(images/ghost.png) no-repeat;
@@ -919,12 +923,46 @@ margin:0 auto;
 background:url(retina/title.png) no-repeat;
 background-size: 32px 92px;
 }
+#subscribe a.rss {
+background-image:url(retina/rss.png);
+background-size: 32px 64px;
+}
+
+#subscribe a.twitter {
+background-image:url(retina/twitter.png);
+background-size: 32px 64px;
+}
+
+#subscribe a.gplus {
+background-image:url(retina/g+.png);
+background-size: 32px 64px;
+}
+#site-generator a.wordpress {
+background:url(retina/wordpress.png);
+background-size: 32px 64px;
+}
+
+#site-generator a.cc {
+background:url(retina/cc.png);
+background-size: 32px 64px;
+}
+
+#site-generator a.gimp {
+background:url(retina/gimp.png);
+background-size: 32px 64px;
+}
 .entry-content a, .comment-body p a {
 background:url(retina/link.png) no-repeat top right;
 background-size: 10px 10px;
 }
 .widget-area ul ul.blogroll {
 list-style-image:url(retina/link.svg);
+}
+.entry-content ul li {
+list-style-image:url(retina/ul.svg);
+}
+.widget-area ul ul {
+list-style-image:url(retina/ul.svg);
 }
 .entry-content ol li {
 list-style-image:url(retina/ol.svg);
@@ -964,5 +1002,18 @@ list-style-image:url(retina/ol-8.svg);
 
 .entry-content ol li:nth-child(9) {
 list-style-image:url(retina/ol-9.svg);
+}
+.close {
+background: url(retina/close.png) no-repeat;
+background-size: 22px 22px;
+}
+.nav-previous a {
+background:url(retina/prev.png);
+background-size: 32px 32px;
+}
+
+.nav-next a {
+background:url(retina/next.png);
+background-size: 32px 32px;
 }
 }

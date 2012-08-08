@@ -1,12 +1,12 @@
 <?php
 /**
- * TwentyTen functions and definitions
+ * neverland functions and definitions
  *
  * Sets up the theme and provides some helper functions. Some helper functions
  * are used in the theme as custom template tags. Others are attached to action and
  * filter hooks in WordPress to change core functionality.
  *
- * The first function, twentyten_setup(), sets up the theme by registering support
+ * The first function, neverland_setup(), sets up the theme by registering support
  * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
  *
  * When using a child theme (see http://codex.wordpress.org/Theme_Development and
@@ -26,7 +26,7 @@
  * add_action( 'after_setup_theme', 'my_child_theme_setup' );
  * function my_child_theme_setup() {
  *     // We are providing our own filter for excerpt_length (or using the unfiltered value)
- *     remove_filter( 'excerpt_length', 'twentyten_excerpt_length' );
+ *     remove_filter( 'excerpt_length', 'neverland_excerpt_length' );
  *     ...
  * }
  * </code>
@@ -38,10 +38,10 @@
  * @since Twenty Ten 1.0
  */
 
-/** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
-add_action( 'after_setup_theme', 'twentyten_setup' );
+/** Tell WordPress to run neverland_setup() when the 'after_setup_theme' hook is run. */
+add_action( 'after_setup_theme', 'neverland_setup' );
 
-if ( ! function_exists( 'twentyten_setup' ) ):
+if ( ! function_exists( 'neverland_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -49,7 +49,7 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * To override twentyten_setup() in a child theme, add your own twentyten_setup to your child theme's
+ * To override neverland_setup() in a child theme, add your own neverland_setup to your child theme's
  * functions.php file.
  *
  * @uses add_theme_support() To add support for post thumbnails and automatic feed links.
@@ -63,7 +63,7 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_setup() {
+function neverland_setup() {
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -76,7 +76,7 @@ function twentyten_setup() {
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'twentyten', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'neverland', get_template_directory() . '/languages' );
 
 	$locale = get_locale();
 	$locale_file = get_template_directory() . "/languages/$locale.php";
@@ -85,7 +85,7 @@ function twentyten_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation', 'twentyten' ),
+		'primary' => __( 'Primary Navigation', 'neverland' ),
 	) );
 }
 endif;
@@ -99,10 +99,10 @@ endif;
  * @since Twenty Ten 1.0
  * @return int
  */
-function twentyten_excerpt_length( $length ) {
+function neverland_excerpt_length( $length ) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'twentyten_excerpt_length' );
+add_filter( 'excerpt_length', 'neverland_excerpt_length' );
 
 /**
  * Returns a "Continue Reading" link for excerpts
@@ -110,12 +110,12 @@ add_filter( 'excerpt_length', 'twentyten_excerpt_length' );
  * @since Twenty Ten 1.0
  * @return string "Continue Reading" link
  */
-function twentyten_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' ) . '</a>';
+function neverland_continue_reading_link() {
+	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'neverland' ) . '</a>';
 }
 
 /**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and twentyten_continue_reading_link().
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and neverland_continue_reading_link().
  *
  * To override this in a child theme, remove the filter and add your own
  * function tied to the excerpt_more filter hook.
@@ -123,10 +123,10 @@ function twentyten_continue_reading_link() {
  * @since Twenty Ten 1.0
  * @return string An ellipsis
  */
-function twentyten_auto_excerpt_more( $more ) {
-	return ' &hellip;' . twentyten_continue_reading_link();
+function neverland_auto_excerpt_more( $more ) {
+	return ' &hellip;' . neverland_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'twentyten_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'neverland_auto_excerpt_more' );
 
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.
@@ -137,13 +137,13 @@ add_filter( 'excerpt_more', 'twentyten_auto_excerpt_more' );
  * @since Twenty Ten 1.0
  * @return string Excerpt with a pretty "Continue Reading" link
  */
-function twentyten_custom_excerpt_more( $output ) {
+function neverland_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= twentyten_continue_reading_link();
+		$output .= neverland_continue_reading_link();
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'twentyten_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'neverland_custom_excerpt_more' );
 
 /**
  * Remove inline styles printed when the gallery shortcode is used.
@@ -166,25 +166,18 @@ add_filter( 'use_default_gallery_style', '__return_false' );
  *
  * @return string The gallery style filter, with the styles themselves removed.
  */
-function twentyten_remove_gallery_css( $css ) {
+function neverland_remove_gallery_css( $css ) {
 	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
 // Backwards compatibility with WordPress 3.0.
 if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
-	add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
+	add_filter( 'gallery_style', 'neverland_remove_gallery_css' );
 
-if ( ! function_exists( 'twentyten_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own twentyten_comment(), and that function will be used instead.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Twenty Ten 1.0
- */
-function twentyten_comment( $comment, $args, $depth ) {
+// Comment style
+
+if ( ! function_exists( 'neverland_comment' ) ) :
+
+function neverland_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case '' :
@@ -192,10 +185,10 @@ function twentyten_comment( $comment, $args, $depth ) {
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<div class="comment-author">
 			<span><?php echo get_avatar( $comment, 40 ); ?></span>
-			<span><?php printf( __( '%s', 'twentyten' ), sprintf( '%s', get_comment_author_link() ) ); ?></span>
+			<span><?php printf( __( '%s', 'neverland' ), sprintf( '%s', get_comment_author_link() ) ); ?></span>
 		</div><!-- .comment-author -->
 		<?php if ( $comment->comment_approved == '0' ) : ?>
-			<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyten' ); ?></em>
+			<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'neverland' ); ?></em>
 			<br />
 		<?php endif; ?>
       <div class="comment-body">
@@ -203,10 +196,10 @@ function twentyten_comment( $comment, $args, $depth ) {
 			<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 			  <?php
 				/* translators: 1: date, 2: time */
-				printf( __( '%1$s at %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?>
+				printf( __( '%1$s at %2$s', 'neverland' ), get_comment_date(),  get_comment_time() ); ?>
 			</a>
 			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			<?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' );?>
+			<?php edit_comment_link( __( '(Edit)', 'neverland' ), ' ' );?>
 			</div><!-- .comment-meta -->
 			
         <?php comment_text(); ?>
@@ -219,7 +212,7 @@ function twentyten_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'twentyten' ); ?> <?php comment_author_link(); ?></p>
+		<p><?php _e( 'Pingback:', 'neverland' ); ?> <?php comment_author_link(); ?></p>
 	<?php
 			break;
 	endswitch;
@@ -229,18 +222,18 @@ endif;
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
  *
- * To override twentyten_widgets_init() in a child theme, remove the action hook and add your own
+ * To override neverland_widgets_init() in a child theme, remove the action hook and add your own
  * function tied to the init hook.
  *
  * @since Twenty Ten 1.0
  * @uses register_sidebar
  */
-function twentyten_widgets_init() {
+function neverland_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', 'twentyten' ),
+		'name' => __( 'Primary Widget Area', 'neverland' ),
 		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', 'twentyten' ),
+		'description' => __( 'The primary widget area', 'neverland' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -249,61 +242,17 @@ function twentyten_widgets_init() {
 
 	// Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Secondary Widget Area', 'twentyten' ),
+		'name' => __( 'Secondary Widget Area', 'neverland' ),
 		'id' => 'secondary-widget-area',
-		'description' => __( 'The secondary widget area', 'twentyten' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	// Area 3, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'First Footer Widget Area', 'twentyten' ),
-		'id' => 'first-footer-widget-area',
-		'description' => __( 'The first footer widget area', 'twentyten' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	// Area 4, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'Second Footer Widget Area', 'twentyten' ),
-		'id' => 'second-footer-widget-area',
-		'description' => __( 'The second footer widget area', 'twentyten' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	// Area 5, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'Third Footer Widget Area', 'twentyten' ),
-		'id' => 'third-footer-widget-area',
-		'description' => __( 'The third footer widget area', 'twentyten' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	// Area 6, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'Fourth Footer Widget Area', 'twentyten' ),
-		'id' => 'fourth-footer-widget-area',
-		'description' => __( 'The fourth footer widget area', 'twentyten' ),
+		'description' => __( 'The secondary widget area', 'neverland' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 }
-/** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
-add_action( 'widgets_init', 'twentyten_widgets_init' );
+/** Register sidebars by running neverland_widgets_init() on the widgets_init hook. */
+add_action( 'widgets_init', 'neverland_widgets_init' );
 
 /**
  * Removes the default styles that are packaged with the Recent Comments widget.
@@ -317,16 +266,17 @@ add_action( 'widgets_init', 'twentyten_widgets_init' );
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_remove_recent_comments_style() {
+function neverland_remove_recent_comments_style() {
 	add_filter( 'show_recent_comments_widget_style', '__return_false' );
 }
-add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
+add_action( 'widgets_init', 'neverland_remove_recent_comments_style' );
 
-/* Add a new Recent Comments widget with avatars */
+// Add a new Recent Comments widget with avatars
+
 if(function_exists('register_sidebar_widget'))
-	register_sidebar_widget(__('Recent Comments with Avatars'),'marguerite_recent_avatar_comments');
+	register_sidebar_widget(__('Recent Comments with Avatars'),'neverland_recent_avatar_comments');
 
-function marguerite_recent_avatar_comments() {
+function neverland_recent_avatar_comments() {
 global $wpdb;
 $sql = "SELECT * from $wpdb->comments WHERE comment_approved= '1' AND comment_type != 'pingback'
     ORDER BY comment_date DESC LIMIT 0 ,8";
@@ -348,20 +298,22 @@ $output .= "</ul></li>";
 echo $output;
 }
 
-/* Replace default avatar with kde one */
-add_filter('avatar_defaults','marguerite_avatar');
+// Replace default avatar with kde one 
 
-function marguerite_avatar($avatar_defaults) {
+add_filter('avatar_defaults','neverland_avatar');
+
+function neverland_avatar($avatar_defaults) {
 	$newavatar = get_bloginfo('template_directory')."/images/avatar.png";
 	$avatar_defaults[$newavatar] = " KDE default";
 	return $avatar_defaults;
 	}
 	
-/* Dropdown Categories */
+// Dropdown Categories 
+
 if(function_exists('register_sidebar_widget'))
-	register_sidebar_widget(__('Dropdown Categories'),'marguerite_dropdown_categories');
+	register_sidebar_widget(__('Dropdown Categories'),'neverland_dropdown_categories');
 	
-function marguerite_dropdown_categories() {
+function neverland_dropdown_categories() {
 $select = wp_dropdown_categories('show_option_none=Select Category&show_count=1&orderby=name&echo=0&selected=6');
 $select = preg_replace("#<select([^>]*)>#", "<select$1 onchange='return this.form.submit()'>", $select);
 $output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">Categories</h3>";
@@ -371,11 +323,12 @@ $output .= "<noscript><input type=\"submit\" value=\"View\" /></noscript></form>
 echo $output;
 	}
 
-/* Categories bar chart */
+// Categories bar chart 
+
 if(function_exists('register_sidebar_widget'))
-	register_sidebar_widget(__('Bar Categories'),'marguerite_bar_cat');
+	register_sidebar_widget(__('Bar Categories'),'neverland_bar_cat');
 	
-function marguerite_bar_cat() {
+function neverland_bar_cat() {
 	global $wpdb;
 	$cat_id = "SELECT term_id,taxonomy,count FROM $wpdb->term_taxonomy WHERE taxonomy = 'category' ";
 	$cat_id_results = $wpdb->get_results($cat_id);
@@ -394,11 +347,12 @@ function marguerite_bar_cat() {
 	echo $output;
 	}
 
-/* Monthly Archives */
-if(function_exists('register_sidebar_widget'))
-	register_sidebar_widget(__('Monthly Bar Archives'),'marguerite_monthly_archives');
+// Monthly Archives 
 
-function marguerite_monthly_archives() {
+if(function_exists('register_sidebar_widget'))
+	register_sidebar_widget(__('Monthly Bar Archives'),'neverland_monthly_archives');
+
+function neverland_monthly_archives() {
 	global $wpdb,$wp_locale;
 	$monthly_archives = "SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish'GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC";
 	$monthly_archives_results = $wpdb->get_results($monthly_archives);
@@ -414,5 +368,34 @@ function marguerite_monthly_archives() {
 		$output .= "</tr>";
 	}
 	$output .= "</table></li>";
+	echo $output;
+}
+
+// Author Statistics Applet
+
+if(function_exists('register_sidebar_widget'))
+	register_sidebar_widget(__('Author Statistics'),'neverland_author_statistics');
+	
+function neverland_author_statistics() {
+    global $wpdb;
+	$neverland_user_query = "SELECT ID, user_email, user_url, display_name FROM $wpdb->users";
+	$neverland_users = $wpdb->get_results($neverland_user_query);
+	
+	$output .= "<li class=\"widget box box-shadow widget_authors\"><h3 class=\"box-subheader\">Authors</h3>";
+	$output .= "<ul>";
+	foreach ($neverland_users as $neverland_user) {
+		$output .= "<li>";
+		$output .= get_avatar($neverland_user->user_email,32);
+		if ($neverland_user->user_url != "") {
+		$output .= "<a title=\"Posts by ".$neverland_user->display_name."\" href=\"".$neverland_user->user_url."\">";
+		$output .= $neverland_user->display_name;
+		$output .= "</a>";
+		} else {	
+		$output .= $neverland_user->display_name;
+		} 
+		$output .= " (".count_user_posts($neverland_user->ID).") ";
+		$output .= "</li>";
+	}
+	$output .= "</ul></li>";
 	echo $output;
 }
