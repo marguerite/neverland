@@ -9,6 +9,11 @@ License: GPL-3.0+
 License URI: COPYING
 Tags: light, white, blue, two-columns, right-sidebar, flexible-width, custom-sidebar, editor-style, full-width-template, microformats, post-formats
 */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("OpenSans-Light.ttf");
+}
+
 body {
 font-family:'Open Sans', sans-serif;
 color:#2e3436;
@@ -698,15 +703,15 @@ background-position: 0 -32px;
 }
 
 #site-generator a.wordpress {
-background:url(images/wordpress.png);
+background-image:url(images/wordpress.png);
 }
 
 #site-generator a.cc {
-background:url(images/cc.png);
+background-image:url(images/cc.png);
 }
 
 #site-generator a.gimp {
-background:url(images/gimp.png);
+background-image:url(images/gimp.png);
 }
 
 li.recent-comment {
@@ -831,7 +836,7 @@ width:60%;
 float:left;
 }
 
-#access a:hover,.widget_recent_entries a:hover,.widget_links a:hover,.widget_meta a:hover,.bar-chart a:hover,.recent-comment a:hover {
+#access a:hover,.widget_recent_entries a:hover,.widget_links a:hover,.widget_meta a:hover,.bar-chart a:hover,.recent-comment a:hover,.tagcloud a:hover {
 color:#00407a;
 text-decoration:underline;
 }
@@ -890,6 +895,9 @@ margin:0 auto;
 
 /* touch phone hack */
 @media only screen and (max-width: 500px) {
+.body {
+  font-family: sans-serif;
+}
 .content, .categorytree {
   width: 86%;
 }
@@ -938,17 +946,17 @@ background-image:url(retina/g+.png);
 background-size: 32px 64px;
 }
 #site-generator a.wordpress {
-background:url(retina/wordpress.png);
+background-image:url(retina/wordpress.png);
 background-size: 32px 64px;
 }
 
 #site-generator a.cc {
-background:url(retina/cc.png);
+background-image:url(retina/cc.png);
 background-size: 32px 64px;
 }
 
 #site-generator a.gimp {
-background:url(retina/gimp.png);
+background-image:url(retina/gimp.png);
 background-size: 32px 64px;
 }
 .entry-content a, .comment-body p a {

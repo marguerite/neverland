@@ -34,26 +34,24 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
 
 	?></title>
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
+<link rel="shortcut icon" href="<?php echo get_bloginfo('template_url'); ?>/favicon.ico" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.css"/>
-<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple/iphone.png"/>
-<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/apple/ipad.png"/>
-<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/apple/retina.png"/>
+<link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_url'); ?>/js/jquery.snippet.css"/>
+<link rel="apple-touch-icon" href="<?php echo get_bloginfo('template_url'); ?>/apple/iphone.png"/>
+<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_bloginfo('template_url'); ?>/apple/ipad.png"/>
+<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_bloginfo('template_url'); ?>/apple/retina.png"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/bluescreen.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.snippet.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/sh_changelog.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/sh_desktop.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/sh_log.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/sh_makefile.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/sh_spec.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/neverland.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/zoom.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/lightbox.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/jquery.snippet.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/sh_changelog.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/sh_desktop.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/sh_log.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/sh_makefile.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/sh_spec.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/neverland.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/zoom.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/lightbox.js"></script>
 
 <?php
 	/* We add some JavaScript to pages with the comment form

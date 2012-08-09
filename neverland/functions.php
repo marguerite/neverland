@@ -381,20 +381,22 @@ function neverland_author_statistics() {
 	$neverland_user_query = "SELECT ID, user_email, user_url, display_name FROM $wpdb->users";
 	$neverland_users = $wpdb->get_results($neverland_user_query);
 	
-	$output .= "<li class=\"widget box box-shadow widget_authors\"><h3 class=\"box-subheader\">Authors</h3>";
+	$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">Authors</h3>";
 	$output .= "<ul>";
 	foreach ($neverland_users as $neverland_user) {
+		if (count_user_posts($neverland_user->ID) != "0" ){
 		$output .= "<li>";
 		$output .= get_avatar($neverland_user->user_email,32);
 		if ($neverland_user->user_url != "") {
-		$output .= "<a title=\"Posts by ".$neverland_user->display_name."\" href=\"".$neverland_user->user_url."\">";
+		$output .= "<a title=\"".$neverland_user->display_name."'s blog\" href=\"".$neverland_user->user_url."\">";
 		$output .= $neverland_user->display_name;
 		$output .= "</a>";
 		} else {	
 		$output .= $neverland_user->display_name;
 		} 
-		$output .= " (".count_user_posts($neverland_user->ID).") ";
+		$output .= "&nbsp;&nbsp;(<a title=\"Posts by".$neverland_uesr->display_name."\" href=\"".get_author_posts_url($neverland_user->ID)."\">".count_user_posts($neverland_user->ID)."</a>)";
 		$output .= "</li>";
+		}
 	}
 	$output .= "</ul></li>";
 	echo $output;

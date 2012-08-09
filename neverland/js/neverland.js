@@ -59,7 +59,7 @@ $(document).ready(function(){
 	});
 	
 	// 标签云的正圆
-	$("a[class^=tag-link]").each(function(i, obj){
+/*	$("a[class^=tag-link]").each(function(i, obj){
 
 		var clone;
 		var position;
@@ -86,7 +86,7 @@ $(document).ready(function(){
 			left = position.left - cloneWidth*0.1;
 		*/
 		
-		var cloneWidth = $(obj).width();
+/*		var cloneWidth = $(obj).width();
 		var cloneHeight = $(obj).height();
 		$(clone).data("heightsave",cloneHeight);
 		
@@ -120,10 +120,10 @@ $(document).ready(function(){
 		}); 
 
 	}); // end each
-	
+
 	// 删除 translate 插件那条奇丑无比的线
 	$(".translate_hr").remove();
-	
+*/
 	// 加载语法高亮
 	$("pre.spec").snippet("spec",{style:"acid"});
 	$("pre.c").snippet("c",{style:"acid"});
