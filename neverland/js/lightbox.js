@@ -25,12 +25,13 @@ $(document).ready(function() {
 	  
 	  // create frame
 	  $(".mask").append('<div class="photoframe"></div>');
-	  $(".mask").append('<div class="ghost"></div>');
 	  
 	  // photo resize
 	  var real_photo = new Image();
 	  real_photo.src = $(this).attr("src");
-	  var real_ratio = window_width*0.9/real_photo.width;
+	  var real_ratio_x = window_width*0.8/real_photo.width;
+	  var real_ratio_y = window_height*0.8/real_photo.height;
+	  var real_ratio = real_ratio_x > real_ratio_y ? real_ratio_y : real_ratio_x;
 	  if ( real_ratio > 1 ) {
 	      var real_width = real_photo.width;
 	      var real_height = real_photo.height;
@@ -38,7 +39,7 @@ $(document).ready(function() {
 	      var real_width = real_photo.width*real_ratio;
 	      var real_height = real_photo.height*real_ratio;
 	  }
-	  $(".photoframe").append('<img width="'+ real_width+'" height="'+real_height+'"'+"src="+ $(this).attr("src") +"/>");
+	  $(".photoframe").append('<img width="'+ real_width+'" height="'+real_height+'" '+'src="' + $(this).attr("src") +'" />');
 	  
 	  // see if we need photo description, better use <a/> title, fallback is img alt
 	  // detect <a/> title
@@ -101,28 +102,8 @@ $(document).ready(function() {
 	      $(".mask").remove();
 	  });
 	  
-	  // eastern egg
-	  
-	  var num_high = 100, num_low = 0;
-	  var adjustedhigh = num_high - num_low + 1;
-	  var num_random = Math.floor(Math.random()*adjustedhigh) + num_low;
-	  
-	  $(".ghost").css({"position":"absolute","top":"10px","left":frame_left});
-	  $(".ghost").css({"display":"none","width":"128px","height":"128px"});
-	  
-	  $(".photoframe img").load(function(){
-	     if (num_random < 10) {		    
-		    $(".ghost").fadeIn(1000);
-		    $(".ghost").animate({left:frame_left + real_width - 128},3000);
-		    $(".photoframe img").fadeOut(5000);
-		    $(".ghost").animate({top:frame_top + real_height - 128},3000);
-		    $(".photoframe img").fadeIn(5000);
-		    $(".ghost").animate({left:frame_left},3000);
-		    $(".photoframe img").fadeOut(5000);
-		    $(".ghost").animate({top:"10px"},3000);
-		    $(".photoframe img").fadeIn(5000);
-		    $(".ghost").fadeOut(1000);
-	     }// end eastern egg
+	  $(".mask").click(function(){
+	      $(".mask").remove();
 	  });
 	  
       }); // end click

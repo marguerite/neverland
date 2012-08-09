@@ -40,4 +40,6 @@ I removed a lot of unneeded functions, added codes respect Chinese users tastes(
 
 * Ajax post/comment/image load
 
+* Oxygen Fonts are released under the SIL Open Font License (OFL) version 1.1 and the Gnu General Public License (with font exception) (GPL+FE).
+
 Marguerite

@@ -9,8 +9,38 @@ License: GPL-3.0+
 License URI: COPYING
 Tags: light, white, blue, two-columns, right-sidebar, flexible-width, custom-sidebar, editor-style, full-width-template, microformats, post-formats
 */
+@font-face{
+	font-family: 'Oxygen Mono';
+	src: url('fonts/OxygenMono-Regular.eot');
+	src: local('Oxygen Mono'),
+	url('fonts/OxygenMono-Regular.woff') format('woff'),
+	url('fonts/OxygenMono-Regular.ttf') format('truetype'),
+	url('fonts/OxygenMono-Regular.svg#Oxygen') format('svg');
+	font-weight:normal;
+}
+
+@font-face{
+	font-family: 'Oxygen';
+	src: url('fonts/Oxygen.eot');
+	src: local('Oxygen'),
+	url('fonts/Oxygen.woff') format('woff'),
+	url('fonts/Oxygen.ttf') format('truetype'),
+	url('fonts/Oxygen.svg#Oxygen') format('svg');
+	font-weight:normal;
+}
+
+@font-face{
+	font-family: 'Oxygen';
+	src: url('fonts/Oxygen-Bold.eot');
+	src: local('Oxygen Bold'), 
+	url('fonts/Oxygen-Bold.woff') format('woff'),
+	url('fonts/Oxygen-Bold.ttf') format('truetype'),
+	url('fonts/Oxygen-Bold.svg#Oxygen-Bold') format('svg');
+	font-weight:bold;
+}
+
 body {
-font-family:'Open Sans', sans-serif;
+font-family: 'Oxygen', sans-serif;
 color:#2e3436;
 background:url(images/white_texture.png) repeat;
 margin:0;
@@ -235,6 +265,11 @@ font-size:10px;
 .entry-content,.entry-summary {
 margin:0 2%;
 padding:12px 0 0;
+}
+
+.entry-content pre, .entry-content code {
+overflow:auto;
+display:block;
 }
 
 .content .entry-summary p:last-child {
@@ -698,15 +733,15 @@ background-position: 0 -32px;
 }
 
 #site-generator a.wordpress {
-background:url(images/wordpress.png);
+background-image:url(images/wordpress.png);
 }
 
 #site-generator a.cc {
-background:url(images/cc.png);
+background-image:url(images/cc.png);
 }
 
 #site-generator a.gimp {
-background:url(images/gimp.png);
+background-image:url(images/gimp.png);
 }
 
 li.recent-comment {
@@ -807,7 +842,6 @@ padding:0 15px;
 }
 
 table.bar-chart {
-display:block;
 width:80%;
 position:relative;
 margin:0 auto;
@@ -831,7 +865,7 @@ width:60%;
 float:left;
 }
 
-#access a:hover,.widget_recent_entries a:hover,.widget_links a:hover,.widget_meta a:hover,.bar-chart a:hover,.recent-comment a:hover {
+#access a:hover,.widget_recent_entries a:hover,.widget_links a:hover,.widget_meta a:hover,.bar-chart a:hover,.recent-comment a:hover, .tagcloud a:hover {
 color:#00407a;
 text-decoration:underline;
 }
@@ -872,6 +906,7 @@ display:none;
 
 #wp-calendar thead,.bar-chart td.cat_name {
 font-size:10px;
+width: 1px;
 }
 
 .widget-area ul li div.tagcloud,.textwidget {
@@ -938,17 +973,17 @@ background-image:url(retina/g+.png);
 background-size: 32px 64px;
 }
 #site-generator a.wordpress {
-background:url(retina/wordpress.png);
+background-image:url(retina/wordpress.png);
 background-size: 32px 64px;
 }
 
 #site-generator a.cc {
-background:url(retina/cc.png);
+background-image:url(retina/cc.png);
 background-size: 32px 64px;
 }
 
 #site-generator a.gimp {
-background:url(retina/gimp.png);
+background-image:url(retina/gimp.png);
 background-size: 32px 64px;
 }
 .entry-content a, .comment-body p a {
