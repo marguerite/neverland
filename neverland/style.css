@@ -390,6 +390,10 @@ border-bottom:1px solid #0068c6;
 margin:0 auto 25px;
 }
 
+.attachment .navigation {
+  border-bottom: none;
+}
+
 .nav-previous a,.nav-next a {
 display:inline-block;
 text-indent:-9999px;
@@ -812,7 +816,6 @@ padding:0 15px;
 }
 
 table.bar-chart {
-display:block;
 width:80%;
 position:relative;
 margin:0 auto;
@@ -836,7 +839,7 @@ width:60%;
 float:left;
 }
 
-#access a:hover,.widget_recent_entries a:hover,.widget_links a:hover,.widget_meta a:hover,.bar-chart a:hover,.recent-comment a:hover,.tagcloud a:hover {
+#access a:hover,.widget_recent_entries a:hover,.widget_links a:hover,.widget_meta a:hover,.bar-chart a:hover,.recent-comment a:hover, .tagcloud a:hover {
 color:#00407a;
 text-decoration:underline;
 }
@@ -877,6 +880,7 @@ display:none;
 
 #wp-calendar thead,.bar-chart td.cat_name {
 font-size:10px;
+width: 1px;
 }
 
 .widget-area ul li div.tagcloud,.textwidget {

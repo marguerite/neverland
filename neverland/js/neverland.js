@@ -29,17 +29,21 @@ $(document).ready(function(){
 	});
 	
 	// 柱状图的高度计算
-	var max_width = 0;
+	var max_number = 0;
 	$('.bar-chart td.cat_bar').each(function (i, n) {
-	if (max_width < $(n).width()) {
-	max_width = $(n).width();
-	}
+		var number = parseInt($(this)[0].innerHTML);
+		if (number > max_number) {
+		  max_number = number;
+		}
+		$(this).css("min-width","10px");
 	});
-	var max_number = max_width/5;
-	var width_average = ($(".bar-chart").width() - $(".bar-chart td.cat_name").width())/max_number;
+	if (max_number <= 0)
+	  max_number = 1;
 	$(".bar-chart td.cat_bar").each(function(){
-		var width_mutiple = $(this).width()/5;
-		$(this).width(width_mutiple*width_average);
+		var number = parseInt($(this)[0].innerHTML);
+		if (number <= 0)
+		  number =1;
+		$(this).css("width",(number / max_number*100)+"%");
 	});
 	
 	// 匹配「KDE提交摘要*」，把它的 p 换成外面包上 ul li
@@ -125,6 +129,7 @@ $(document).ready(function(){
 	$(".translate_hr").remove();
 */
 	// 加载语法高亮
+	$("pre.sh").snippet("sh",{style:"acid"});
 	$("pre.spec").snippet("spec",{style:"acid"});
 	$("pre.c").snippet("c",{style:"acid"});
 	$("pre.cpp").snippet("cpp",{style:"acid"});

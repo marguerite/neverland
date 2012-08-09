@@ -3,7 +3,7 @@ $(document).ready(function() {
   var window_width = $(window).width();
   var window_height = $(window).height();
   
-  $(".entry-content img:not(.wp-smiley)").each(function(){
+  $(".entry-content img:not(.wp-smiley), .comment-body p img").each(function(){
     
       if ($(this).parent("a").length >= 0) {
 	  // save href
@@ -124,8 +124,7 @@ $(document).ready(function() {
 		    $(".ghost").animate({top:"10px"},3000);
 		    $(".photoframe img").fadeIn(5000);
 		    $(".ghost").fadeOut(1000);
-	     }// end eastern egg*/
-	  });
+	  });// end eastern egg */
 	  
       }); // end click
   }); // end each
