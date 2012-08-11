@@ -1,0 +1,280 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: loop.php:167
+msgid "% Comments"
+msgstr ""
+
+#. Text in function
+#: functions.php:197
+msgid "%1$s at %2$s"
+msgstr ""
+
+#. Text in function
+#: functions.php:188
+msgid "%s"
+msgstr ""
+
+#. Text in function
+#: functions.php:202
+msgid "(Edit)"
+msgstr ""
+
+#. Text in function
+#: loop.php:167
+msgid "1 Comment"
+msgstr ""
+
+#. Text in function
+#: attachment.php:29
+msgid "<span class=\"%1$s\">By</span> %2$s"
+msgstr ""
+
+#. Text in function
+#: attachment.php:29
+msgid "<span class=\"%1$s\">Published</span> %2$s"
+msgstr ""
+
+#. Text in function
+#: attachment.php:8
+msgid "<span class=\"meta-nav\">&larr;</span> %s"
+msgstr ""
+
+#. Text in function
+#: comments.php:60
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr ""
+
+#. Text in function
+#: loop.php:188
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#. Text in function
+#: single.php:33
+#: author.php:27
+msgid "About %s"
+msgstr ""
+
+#. Text in echo
+#: loop.php:27
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr ""
+
+#. Text in echo
+#: 404.php:8
+msgid "Apologies, but the page you requested could not be found. Perhaps searching will help."
+msgstr ""
+
+#. Text in echo
+#: sidebar.php:18
+msgid "Archives"
+msgstr ""
+
+#. Text in function
+#: author.php:17
+msgid "Author Archives: %s"
+msgstr ""
+
+#. Text in echo
+#: archive.php:31
+msgid "Blog Archives"
+msgstr ""
+
+#. Text in echo
+#: single.php:12
+msgid "By"
+msgstr ""
+
+#. Text in function
+#: archive.php:27
+msgid "Category Archives: %s"
+msgstr ""
+
+#. Text in echo
+#: search.php:16
+msgid "Command Not Found"
+msgstr ""
+
+#. Text in echo
+#: comments.php:72
+msgid "Comments are closed."
+msgstr ""
+
+#. Text in function
+#: functions.php:1
+#: attachment.php:90
+#: loop.php:172
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Text in echo
+#: footer.php:30
+msgid "Creative Commons"
+msgstr ""
+
+#. Text in function
+#: archive.php:17
+msgid "Daily Archives: <span>%s</span>"
+msgstr ""
+
+#. Text in function
+#: attachment.php:50
+#: attachment.php:97
+#: page.php:31
+#: onecolumn-page.php:26
+#: loop.php:168
+msgid "Edit"
+msgstr ""
+
+#. Text in function
+#: attachment.php:29
+msgid "Full size is %s pixels"
+msgstr ""
+
+#. Text in echo
+#: footer.php:33
+msgid "GIMP (I'm not using Photoshop)."
+msgstr ""
+
+#. Text in function
+#: loop.php:167
+msgid "Leave a comment"
+msgstr ""
+
+#. Text in function
+#: attachment.php:29
+msgid "Link to full-size image"
+msgstr ""
+
+#. Text in echo
+#: sidebar.php:25
+msgid "Meta"
+msgstr ""
+
+#. Text in function
+#: archive.php:19
+msgid "Monthly Archives: <span>%s</span>"
+msgstr ""
+
+#. Text in function
+#: comments.php:61
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Text in function
+#: loop.php:189
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Text in echo
+#: 404.php:6
+#: loop.php:25
+msgid "Not Found"
+msgstr ""
+
+#. Text in function
+#: header.php:16
+msgid "Page %s"
+msgstr ""
+
+#. Text in function
+#: attachment.php:91
+#: page.php:30
+#: onecolumn-page.php:25
+#: single.php:19
+#: loop.php:173
+msgid "Pages:"
+msgstr ""
+
+#. Text in function
+#: loop.php:162
+#: loop.php:146
+msgid "Permalink to %s"
+msgstr ""
+
+#. Text in echo
+#: functions.php:215
+msgid "Pingback:"
+msgstr ""
+
+#. Text in function
+#: functions.php:1
+msgid "Primary Navigation"
+msgstr ""
+
+#. Text in echo
+#: single.php:13
+msgid "Published"
+msgstr ""
+
+#. Text in function
+#: attachment.php:8
+msgid "Return to %s"
+msgstr ""
+
+#. Text in function
+#: search.php:6
+msgid "Search Results for: %s"
+msgstr ""
+
+#. Text in echo
+#: footer.php:26
+msgid "Semantic Personal Publishing Platform"
+msgstr ""
+
+#. Text in echo
+#: search.php:18
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr ""
+
+#. Text in function
+#: archive.php:27
+msgid "Tag Archives: %s"
+msgstr ""
+
+#. Text in echo
+#: comments.php:18
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#. Text in echo
+#: loop.php:60
+#: loop.php:100
+#: loop.php:165
+msgid "View all posts by"
+msgstr ""
+
+#. Text in function
+#: attachment.php:29
+msgid "View all posts by %s"
+msgstr ""
+
+#. Text in function
+#: single.php:37
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Text in function
+#: archive.php:21
+msgid "Yearly Archives: <span>%s</span>"
+msgstr ""
+
+#. Text in echo
+#: functions.php:191
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. Text in function
+#: footer.php:25
+msgid "http://wordpress.org/"
+msgstr ""
+
+#. Text in function
+#: single.php:14
+#: loop.php:129
+msgid "| Edit"
+msgstr ""

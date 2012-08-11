@@ -21,16 +21,16 @@
 			</div><!-- #site-info -->
 
 			<div id="site-generator">
-				<?php do_action( 'twentyten_credits' ); ?>
-				<a class="wordpress" href="<?php echo esc_url( __('http://wordpress.org/', 'twentyten') ); ?>"
-						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'twentyten'); ?>" rel="generator">
-					<?php printf('WordPress', 'twentyten'); ?>
+				<?php do_action( 'neverland_credits' ); ?>
+				<a class="wordpress" href="<?php echo esc_url( __('http://wordpress.org/', 'neverland') ); ?>"
+						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'neverland'); ?>" rel="generator">
+					<?php printf('WordPress', 'neverland'); ?>
 				</a>
 				<a class="cc" href="">
-					& 创作共享 CC 协议
+					& <?php _e('Creative Commons','neverland');?>
 				</a>
 				<a class="gimp" href="http://gimp.org">
-					& GIMP (I'm not using Photoshop).
+					& <?php _e("GIMP (I'm not using Photoshop).",'neverland');?>
 				</a>
 			</div><!-- #site-generator -->
 

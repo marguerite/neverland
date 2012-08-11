@@ -281,7 +281,7 @@ global $wpdb;
 $sql = "SELECT * from $wpdb->comments WHERE comment_approved= '1' AND comment_type != 'pingback'
     ORDER BY comment_date DESC LIMIT 0 ,8";
 $comments = $wpdb->get_results($sql);
-$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">What's up buddy?</h3>";
+$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">"._e("What's up buddy?",'neverland')."</h3>";
 $output .= "<ul>";
 foreach ($comments as $comment) {
 $output .= "<li class=\"recent-comment\">";
@@ -304,7 +304,7 @@ add_filter('avatar_defaults','neverland_avatar');
 
 function neverland_avatar($avatar_defaults) {
 	$newavatar = get_bloginfo('template_directory')."/images/avatar.png";
-	$avatar_defaults[$newavatar] = " KDE default";
+	$avatar_defaults[$newavatar] = _e('KDE default','neverland');
 	return $avatar_defaults;
 	}
 	
@@ -316,7 +316,7 @@ if(function_exists('register_sidebar_widget'))
 function neverland_dropdown_categories() {
 $select = wp_dropdown_categories('show_option_none=Select Category&show_count=1&orderby=name&echo=0&selected=6');
 $select = preg_replace("#<select([^>]*)>#", "<select$1 onchange='return this.form.submit()'>", $select);
-$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">Categories</h3>";
+$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">"._e('Categories','neverland')."</h3>";
 $output .= "<form class=\"dropdown_categories\" action=\"". get_bloginfo('url')."\" method=\"get\">";
 $output .= $select;
 $output .= "<noscript><input type=\"submit\" value=\"View\" /></noscript></form></li>";
@@ -332,7 +332,7 @@ function neverland_bar_cat() {
 	global $wpdb;
 	$cat_id = "SELECT term_id,taxonomy,count FROM $wpdb->term_taxonomy WHERE taxonomy = 'category' ";
 	$cat_id_results = $wpdb->get_results($cat_id);
-	$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">Categories</h3>";
+	$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">"._e('Categories','neverland')."</h3>";
 	$output .= "<table class=\"bar-chart\">";
 	foreach ($cat_id_results as $cat_id_result) {
 		$bar_width = ($cat_id_result->count)*5;
@@ -356,7 +356,7 @@ function neverland_monthly_archives() {
 	global $wpdb,$wp_locale;
 	$monthly_archives = "SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish'GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC";
 	$monthly_archives_results = $wpdb->get_results($monthly_archives);
-	$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">Archives</h3>";
+	$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">"._e('Archives','neverland')."</h3>";
 	$output .= "<table class=\"bar-chart\">";
 	foreach ($monthly_archives_results as $monthly_archives_result) {
 		$bar_width = ($monthly_archives_result->posts)*5;
@@ -381,14 +381,14 @@ function neverland_author_statistics() {
 	$neverland_user_query = "SELECT ID, user_email, user_url, display_name FROM $wpdb->users";
 	$neverland_users = $wpdb->get_results($neverland_user_query);
 	
-	$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">Authors</h3>";
+	$output .= "<li class=\"widget-container\"><h3 class=\"widget-title\">"._e('Authors','neverland')."</h3>";
 	$output .= "<ul>";
 	foreach ($neverland_users as $neverland_user) {
 		if (count_user_posts($neverland_user->ID) != "0" ){
 		$output .= "<li>";
 		$output .= get_avatar($neverland_user->user_email,32);
 		if ($neverland_user->user_url != "") {
-		$output .= "<a title=\"".$neverland_user->display_name."'s blog\" href=\"".$neverland_user->user_url."\">";
+		$output .= "<a title=\"".$neverland_user->display_name._e("'s blog",'neverland')."\" href=\"".$neverland_user->user_url."\">";
 		$output .= $neverland_user->display_name;
 		$output .= "</a>";
 		} else {	

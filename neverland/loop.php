@@ -22,9 +22,9 @@
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">
-		<h1 class="entry-title"><?php _e( 'Not Found', 'twentyten' ); ?></h1>
+		<h1 class="entry-title"><?php _e( 'Not Found', 'neverland' ); ?></h1>
 		<div class="entry-content">
-			<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyten' ); ?></p>
+			<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'neverland' ); ?></p>
 			<?php get_search_form(); ?>
 		</div><!-- .entry-content -->
 	</div><!-- #post-0 -->
@@ -51,19 +51,19 @@
 	<?php if(is_archive()): ?>
 <?php /* How to display posts of the Gallery format. The gallery category is the old way. */ ?>
 
-	<?php if ( ( function_exists( 'get_post_format' ) && 'gallery' == get_post_format( $post->ID ) ) || in_category( _x( 'gallery', 'gallery category slug', 'twentyten' ) ) ) : ?>
+	<?php if ( ( function_exists( 'get_post_format' ) && 'gallery' == get_post_format( $post->ID ) ) || in_category( _x( 'gallery', 'gallery category slug', 'neverland' ) ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<div class="entry-utility">
 				<span class="date"><?php the_date(); ?></span> |
-				<a class="author" href="<?php get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="View all posts by <?php the_author(); ?>"><?php the_author();?></a> |
+				<a class="author" href="<?php get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php _e('View all posts by','neverland')?> <?php the_author(); ?>"><?php the_author();?></a> |
 				<?php if ( function_exists( 'the_pageview' ) ) {
             the_pageview();
             echo " visits |";
             } ?>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
-				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'neverland' ), __( '1 Comment', 'neverland' ), __( '% Comments', 'neverland' ) ); ?></span>
+				<?php edit_post_link( __( 'Edit', 'neverland' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 			</div><!-- .entry-utility -->
 
 			<div class="entry-content">
@@ -80,8 +80,8 @@
 						<div class="gallery-thumb">
 							<a class="size-thumbnail" href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 						</div><!-- .gallery-thumb -->
-						<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'twentyten' ),
-								'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
+						<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'neverland' ),
+								'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
 								number_format_i18n( $total_images )
 							); ?></em></p>
 				<?php endif; ?>
@@ -93,17 +93,17 @@
 
 <?php else: ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 			<div class="entry-utility">
 				<span class="date"><?php the_date(); ?></span> |
-				<a class="author" href="<?php get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="View all posts by <?php the_author(); ?>"><?php the_author();?></a> |
+				<a class="author" href="<?php get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php _e('View all posts by','neverland');?> <?php the_author(); ?>"><?php the_author();?></a> |
 				<?php if ( function_exists( 'the_pageview' ) ) {
             the_pageview();
             echo " visits |";
             } ?>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
-				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'neverland' ), __( '1 Comment', 'neverland' ), __( '% Comments', 'neverland' ) ); ?></span>
+				<?php edit_post_link( __( 'Edit', 'neverland' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 			</div><!-- .entry-utility -->
 
 		</div><!-- #post-## -->
@@ -118,15 +118,15 @@
 		
 <?php /* How to display posts of the Gallery format. The gallery category is the old way. */ ?>
 
-	<?php if ( ( function_exists( 'get_post_format' ) && 'gallery' == get_post_format( $post->ID ) ) || in_category( _x( 'gallery', 'gallery category slug', 'twentyten' ) ) ) : ?>
+	<?php if ( ( function_exists( 'get_post_format' ) && 'gallery' == get_post_format( $post->ID ) ) || in_category( _x( 'gallery', 'gallery category slug', 'neverland' ) ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<div class="entry-utility">
-				By <a href="<?php get_author_posts_url(get_the_author_meta('ID')); ?>" title="View all posts by <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
+				By <a href="<?php get_author_posts_url(get_the_author_meta('ID')); ?>" title="<?php _e('View all posts by','neverland');?> <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
 				Published <abbr><?php the_date() ?></abbr> |
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
-				<?php edit_post_link( __( '| Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
+				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'neverland' ), __( '1 Comment', 'neverland' ), __( '% Comments', 'neverland' ) ); ?></span>
+				<?php edit_post_link( __( '| Edit', 'neverland' ), '<span class="edit-link">', '</span>' ); ?>
 			</div><!-- .entry-utility -->
 
 			<div class="entry-content">
@@ -143,8 +143,8 @@
 						<div class="gallery-thumb">
 							<a class="size-thumbnail" href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 						</div><!-- .gallery-thumb -->
-						<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'twentyten' ),
-								'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
+						<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'neverland' ),
+								'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
 								number_format_i18n( $total_images )
 							); ?></em></p>
 				<?php endif; ?>
@@ -159,18 +159,18 @@
 	<?php else : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 			<div class="entry-utility">
-				By <a href="<?php get_author_posts_url(get_the_author_meta('ID')); ?>" title="View all posts by <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
+				By <a href="<?php get_author_posts_url(get_the_author_meta('ID')); ?>" title="<?php _e('View all posts by','neverland');?> <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
 				Published <abbr><?php the_date() ?></abbr> |
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
-				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'neverland' ), __( '1 Comment', 'neverland' ), __( '% Comments', 'neverland' ) ); ?></span>
+				<?php edit_post_link( __( 'Edit', 'neverland' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 			</div><!-- .entry-utility -->
 						
 			<div class="entry-content">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'neverland' ) ); ?>
+				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'neverland' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 
 		</div><!-- #post-## -->
@@ -185,7 +185,7 @@
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
 				<div class="navigation">
-					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentyten' ) ); ?></div>
-					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
+					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'neverland' ) ); ?></div>
+					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'neverland' ) ); ?></div>
 				</div><!-- #nav-below -->
 <?php endif; ?>
