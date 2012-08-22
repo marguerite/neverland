@@ -9,7 +9,7 @@
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 					
 					<div class="entry-utility">
-						<?php _e('By','neverland');?> <a href="<?php get_author_posts_url(get_the_author_meta('ID')); ?>" title="View all posts by <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
+						<?php _e('By','neverland');?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" title="View all posts by <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
 						<?php _e('Published','neverland');?> <abbr><?php the_date() ?></abbr>
 						<?php edit_post_link( __( '| Edit', 'neverland' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-utility -->

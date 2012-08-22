@@ -403,12 +403,12 @@ margin:15px 0;
 }
 
 .nav-previous a {
-float:left;
+float:right;
 background:url(images/prev.png);
 }
 
 .nav-next a {
-float:right;
+float:left;
 background:url(images/next.png);
 }
 

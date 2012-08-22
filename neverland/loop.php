@@ -57,7 +57,7 @@
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<div class="entry-utility">
 				<span class="date"><?php the_date(); ?></span> |
-				<a class="author" href="<?php get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php _e('View all posts by','neverland')?> <?php the_author(); ?>"><?php the_author();?></a> |
+				<a class="author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php _e('View all posts by','neverland')?> <?php the_author(); ?>"><?php the_author();?></a> |
 				<?php if ( function_exists( 'the_pageview' ) ) {
             the_pageview();
             echo " visits |";
@@ -97,7 +97,7 @@
 
 			<div class="entry-utility">
 				<span class="date"><?php the_date(); ?></span> |
-				<a class="author" href="<?php get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php _e('View all posts by','neverland');?> <?php the_author(); ?>"><?php the_author();?></a> |
+				<a class="author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php _e('View all posts by','neverland');?> <?php the_author(); ?>"><?php the_author();?></a> |
 				<?php if ( function_exists( 'the_pageview' ) ) {
             the_pageview();
             echo " visits |";
@@ -123,7 +123,7 @@
 
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<div class="entry-utility">
-				By <a href="<?php get_author_posts_url(get_the_author_meta('ID')); ?>" title="<?php _e('View all posts by','neverland');?> <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
+				By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" title="<?php _e('View all posts by','neverland');?> <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
 				Published <abbr><?php the_date() ?></abbr> |
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'neverland' ), __( '1 Comment', 'neverland' ), __( '% Comments', 'neverland' ) ); ?></span>
 				<?php edit_post_link( __( '| Edit', 'neverland' ), '<span class="edit-link">', '</span>' ); ?>
@@ -162,7 +162,7 @@
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 			<div class="entry-utility">
-				By <a href="<?php get_author_posts_url(get_the_author_meta('ID')); ?>" title="<?php _e('View all posts by','neverland');?> <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
+				By <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" title="<?php _e('View all posts by','neverland');?> <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
 				Published <abbr><?php the_date() ?></abbr> |
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'neverland' ), __( '1 Comment', 'neverland' ), __( '% Comments', 'neverland' ) ); ?></span>
 				<?php edit_post_link( __( 'Edit', 'neverland' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
