@@ -736,7 +736,7 @@ margin-left:40px;
 
 .recent_comment_text {
 width:85%;
-float:right;
+margin-left:32px;
 border-bottom:1px solid #ddd;
 color:#9e8da7;
 font-size:10px;
