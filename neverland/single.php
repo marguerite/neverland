@@ -7,20 +7,20 @@
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 					<h1 class="entry-title"><?php the_title(); ?></h1>
-					
+
 					<div class="entry-utility">
-						<?php _e('By','neverland');?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" title="View all posts by <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
-						<?php _e('Published','neverland');?> <abbr><?php the_date() ?></abbr>
+						<?php __('By','neverland');?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" title="View all posts by <?php the_author();?>"><abbr><?php the_author(); ?></abbr></a> |
+						<?php __('Published','neverland');?> <abbr><?php the_date() ?></abbr>
 						<?php edit_post_link( __( '| Edit', 'neverland' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-utility -->
-					
+
 					<div class="entry-content">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'neverland' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
-				
+
 				</div><!-- #post-## -->
-				
+
 				<div class="entry-utility">
 						<?php if (the_tags()); ?>
 				</div>

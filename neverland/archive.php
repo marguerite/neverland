@@ -28,10 +28,10 @@
 					printf( __( 'Tag Archives: %s', 'neverland' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 				?>
 <?php else : ?>
-				<?php _e( 'Blog Archives', 'neverland' ); ?>
+				<?php __( 'Blog Archives', 'neverland' ); ?>
 <?php endif; ?>
 			</h1>
-	
+
 <?php if ( is_category() ) : ?>
 					<?php
 					$category_description = category_description();

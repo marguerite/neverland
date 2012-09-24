@@ -27,10 +27,10 @@
 					<?php printf('WordPress', 'neverland'); ?>
 				</a>
 				<a class="cc" href="">
-					& <?php _e('Creative Commons','neverland');?>
+					& <?php __('Creative Commons','neverland');?>
 				</a>
 				<a class="gimp" href="http://gimp.org">
-					& <?php _e("GIMP (I'm not using Photoshop).",'neverland');?>
+					& <?php __("GIMP (I'm not using Photoshop).",'neverland');?>
 				</a>
 			</div><!-- #site-generator -->
 

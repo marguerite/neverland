@@ -15,7 +15,7 @@
 <script src="<?php echo bloginfo('template_url'); ?>/js/mediacomment.js"></script>
 			<div id="comments">
 <?php if ( post_password_required() ) : ?>
-				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'neverland' ); ?></p>
+				<p class="nopassword"><?php __( 'This post is password protected. Enter the password to view any comments.', 'neverland' ); ?></p>
 			</div><!-- #comments -->
 <?php
 		/* Stop the rest of comments.php from being processed,
@@ -69,7 +69,7 @@
 	 */
 	if ( ! comments_open() ) :
 ?>
-	<p class="nocomments"><?php _e( 'Comments are closed.', 'neverland' ); ?></p>
+	<p class="nocomments"><?php __( 'Comments are closed.', 'neverland' ); ?></p>
 <?php endif; // end ! comments_open() ?>
 
 <?php endif; // end have_comments() ?>

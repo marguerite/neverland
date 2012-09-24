@@ -13,9 +13,9 @@
 				?>
 <?php else : ?>
 				<div id="post-0" class="post no-results not-found">
-					<h2 class="entry-title"><?php _e( 'Command Not Found', 'neverland' ); ?></h2>
+					<h2 class="entry-title"><?php __( 'Command Not Found', 'neverland' ); ?></h2>
 					<div class="entry-content error404">
-						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'neverland' ); ?></p>
+						<p><?php __( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'neverland' ); ?></p>
 					</div><!-- .entry-content -->
 				</div><!-- #post-0 -->
 <?php endif; ?>
