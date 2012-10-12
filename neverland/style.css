@@ -1029,11 +1029,11 @@ background:url(retina/next.png);
 background-size: 32px 32px;
 }
 
-input[type=text]{
+input[type="text"]{
 -webkit-appearance: caret;
 }
 
-input[type=submit]{
+input[type="submit"]{
 -webkit-appearance: none;
 }
 
