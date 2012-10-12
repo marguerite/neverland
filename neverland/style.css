@@ -44,7 +44,7 @@ strong {
 font-weight:700;
 }
 
-input[type="text"],textarea {
+input[type=text],textarea {
 color:#0068c6;
 border:1px solid #eee;
 padding:5px;
@@ -1028,4 +1028,14 @@ background-size: 32px 32px;
 background:url(retina/next.png);
 background-size: 32px 32px;
 }
+
+input[type=text]{
+-webkit-appearance: caret;
 }
+
+input[type=submit]{
+-webkit-appearance: none;
+}
+
+}
+
