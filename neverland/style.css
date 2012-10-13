@@ -601,6 +601,7 @@ border-radius:0 3px 3px 0;
 background-color:#0068c6;
 margin-left:-1%;
 padding:0;
+-webkit-appearance: none;
 }
 
 #searchform #s {
@@ -612,6 +613,7 @@ border-color:#eee;
 border-style:solid none solid solid;
 border-width:1px none 1px 1px;
 padding:0 0 0 5px;
+-webkit-appearance: caret;
 }
 
 #wp_tag_cloud div {
@@ -1028,14 +1030,5 @@ background-size: 32px 32px;
 background:url(retina/next.png);
 background-size: 32px 32px;
 }
-
-input[type="text"]{
--webkit-appearance: caret;
-}
-
-input[type="submit"]{
--webkit-appearance: none;
-}
-
 }
 
