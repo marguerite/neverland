@@ -64,6 +64,7 @@ margin-bottom:25px;
 color:#555;
 line-height:200%;
 padding:2px 5px 2px 15px;
+overflow-x:auto;
 }
 
 blockquote {
