@@ -493,14 +493,14 @@ font-weight:400;
 line-height:18px;
 }
 
-#respond .required {
+#respond required {
 color:#c09;
 font-weight:700;
 }
 
 #respond .comment-form-email .required,#respond .comment-form-author .required {
 float:right;
-margin-right:30%;
+margin-right:25%;
 }
 
 #respond textarea {
@@ -521,7 +521,7 @@ display:inline-block;
 color:#FFF;
 background-color:#0068c6;
 position:relative;
-padding:5px 0;
+padding:4px 0;
 }
 
 label[for=url]:after,label[for=author]:after,label[for=email]:after {
@@ -835,7 +835,7 @@ margin:0 0 5px 5px;
 }
 
 .not-found #searchform #s,.widget_search #s {
-width:60%;
+width:50%;
 }
 
 #access li,.gallery dl {
