@@ -1,6 +1,6 @@
 /*
 Theme Name: Neverland
-Theme URI: N/A
+Theme URI: https://github.com/marguerite/neverland
 Author: Marguerite Su
 Author URI: http://marguerite.su/
 Description: KDE Neverland Theme
@@ -313,28 +313,93 @@ list-style-image:url(images/ol-9.png);
 list-style-image:none;
 }
 
+/* Start of Author related CSS */
+
+.author .content h1 {
+	font-size: 16pt;
+}
+
 #entry-author-info {
-border:1px solid #eee;
-background-color:#fafafa;
-margin:15px 0;
-padding:15px;
+padding-left: 5px;
 }
 
 #author-avatar {
-float:left;
+display: block;
+width: 85px;
+float: left;
 }
 
 #author-avatar img {
-border-radius:32px;
--moz-border-radius:32px;
+	border: 1px solid #d3d7cf;
+	padding: 4px;
+	-webkit-border-radius: 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.075);
+	background-color: white;
 }
 
-#author-link {
-margin-left:60px;
+#author-avatar span {
+	display: block;
+	width: 82px;
+	text-align:center;
 }
+
+#author-description {
+	display:block;
+	margin-left: 100px;
+	min-height: 104px;
+	box-shadow: -10px 0 10px -8px rgba(150,150,150,.5);
+	padding-left: 5px;
+}
+
+#author-contacts {
+	margin-left: 10px;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 0.5%;
+	-webkit-column-fill: auto;
+}
+
+#author-contacts li {
+	-webkit-column-break-inside: avoid;
+	margin-bottom: 5px;
+}
+
+#author-contacts:after {
+	visibility: hidden;
+	clear: both;
+	content: "";
+	display: block;
+	height: 0;
+}
+
+#author-contacts + div {
+	margin-left: 10px;
+}
+
+#author-pinterest {
+	width: 100%;
+	display: block;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 0.5%;
+	-webkit-column-fill: auto;
+}
+
+#author-pinterest li {
+	-webkit-column-break-inside: avoid;
+	padding: 1%;
+}
+
+#author-pinterest .entry-title {
+	font-size: 14pt;
+}
+
+#author-pinterest .entry-title a {
+	color: #0068c6;
+}
+
+/* END of Author Related CSS */
+
 
 span.date,a.author {
-padding-left:20px;
 display:inline-block;
 height:16px;
 line-height:16px;
@@ -343,32 +408,6 @@ line-height:16px;
 span.date {
 color:#9e8da7;
 margin-bottom:5px;
-margin-right:5px;
-background:url(images/calendar.png) no-repeat;
-}
-
-a.author {
-background:url(images/author.png) no-repeat;
-}
-
-.entry-utility a[rel=category],.entry-utility a[rel=tag],.entry-utility .permalink,.archive .comments-link a {
-padding-left:20px;
-}
-
-.entry-utility a[rel=category] {
-background:url(images/category.png) no-repeat;
-}
-
-.entry-utility a[rel=tag] {
-background:url(images/tag.png) no-repeat;
-}
-
-.entry-utility .permalink {
-background:url(images/permalink.png) no-repeat;
-}
-
-.archive .comments-link a {
-background:url(images/comment.png) no-repeat;
 }
 
 .gallery {
@@ -832,10 +871,6 @@ vertical-align:bottom;
 text-align:center;
 color:#FFF;
 margin:0 0 5px 5px;
-}
-
-.not-found #searchform #s,.widget_search #s {
-width:50%;
 }
 
 #access li,.gallery dl {

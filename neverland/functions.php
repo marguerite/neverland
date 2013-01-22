@@ -100,7 +100,7 @@ endif;
  * @return int
  */
 function neverland_excerpt_length( $length ) {
-	return 40;
+	return 500;
 }
 add_filter( 'excerpt_length', 'neverland_excerpt_length' );
 
@@ -399,5 +399,216 @@ function neverland_author_statistics() {
 		}
 	}
 	$output .= "</ul></li>";
+	echo $output;
+}
+
+/* More Options for Authors */
+add_filter('user_contactmethods','neverland_add_contact_fields');
+
+function neverland_add_contact_fields($contactmethods) {
+	$contactmethods['twitter'] = 'Twitter';
+	$contactmethods['kdelook'] = 'kde-look(apps).org';
+	$contactmethods['identica'] = 'Identi.ca';
+	$contactmethods['plurk'] = 'Plurk';
+	$contactmethods['googleplus_displayname'] = 'Google+ DisplayName';
+	$contactmethods['googleplus_url'] = 'Google+ URL';
+	$contactmethods['facebook_displayname'] = 'Facebook DisplayName';
+	$contactmethods['facebook_url'] = 'Facebook URL';
+	$contactmethods['weibo_name'] = 'Sina Weibo Name';
+	$contactmethods['weibo_url'] = 'Sina Weibo URL';
+	$contactmethods['douban_name'] = 'Douban Name';
+	$contactmethods['douban_url'] = 'Douban URL';
+	$contactmethods['v2ex'] = 'V2EX';
+	$contactmethods['github'] = 'Github';
+	$contactmethods['obs'] = 'OBS';
+	$contactmethods['dribbble'] = 'Dribbble';
+	$contactmethods['fiveoopx'] = '500px';
+	$contactmethods['tumblr'] = 'Tumblr';
+	$contactmethods['deviantart'] = 'DeviantArt';
+	$contactmethods['skype'] = 'Skype';
+	$contactmethods['imessage'] = 'iMessage';
+	$contactmethods['weixin'] = 'WeiXin';
+	$contactmethods['renren_name'] = 'RenRen Name';
+	$contactmethods['renren_url'] = 'RenRen URL';
+	$contactmethods['custom_servicename'] = 'Custom Service Name';
+	$contactmethods['custom_name'] = 'Custom Name';
+	$contactmethods['custom_url'] = 'Custom URL';
+	$contactmethods['other'] = 'Other';
+	
+	unset($contactmethods['yim']);
+	unset($contactmethods['aim']);
+	
+	return $contactmethods;
+}
+
+/* Output Improved Author Information */
+
+function neverland_author_information() {
+	
+	$output .= '<div id="entry-author-info">';
+	
+		$output .= '<div id="author-avatar">';
+							
+			$output .= get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'neverland_author_bio_avatar_size', 72 ) );
+	
+			if  (get_the_author_meta('first_name') && get_the_author_meta('last_name')) {
+		
+				$output .= '<span><a href="mailto://'.get_the_author_meta('user_email').'" title="Email'.get_the_author_meta('nickname').'">'.get_the_author_meta('first_name').'·'.get_the_author_meta('last_name').'</a></span>';
+
+			} else {
+				$output .= '<span><a href="mailto://'.get_the_author_meta('user_email').'" title="Email'.get_the_author_meta('nickname').'">'.get_the_author_meta('nickname').'</a></span>';
+			} 
+
+		$output .= '</div><!-- #author-avatar -->';
+	
+		$output .= '<div id="author-description">';
+	
+			$output .= '<ul id="author-contacts">';
+			
+			
+				if (get_the_author_meta('user_url')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('user_url').'" title="'.get_the_author_meta('nickname').'\'s Blog" style="background:url('.get_the_author_meta('user_url').'/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('user_url').'</a></li>';
+		
+				}
+	
+				if (get_the_author_meta('twitter')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="https://twitter.com/#!/'.get_the_author_meta('twitter').'" title="Follow '.get_the_author_meta('twitter').' on Twitter" style="background:url(https://twitter.com/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('twitter').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('kdelook')) {
+					
+					$output .= '<li class="author-contacts-item"><a href="http://kde-look.org/usermanager/search.php?username='.get_the_author_meta('kdelook').'" title="Follow '.get_the_author_meta('kdelook').' on kde-look(apps).org" style="background:url(http://ikde.org/wp-content/themes/neverland/favicon.ico) no-repeat center left; padding: 18px;">'.get_the_author_meta('kdelook').'</a></li>';
+				
+				}
+				
+				if (get_the_author_meta('identica')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="https://identi.ca/'.get_the_author_meta('identica').'" title="Follow '.get_the_author_meta('identica').' on Identi.ca" style="background:url(https://identi.ca/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('identica').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('plurk')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="https://plurk.com/'.get_the_author_meta('plurk').'" title="Follow '.get_the_author_meta('plurk').' on Plurk" style="background:url(https://plurk.com/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('plurk').'</a></li>';
+		
+				}	
+				
+				if (get_the_author_meta('googleplus_url') && get_the_author_meta('googleplus_displayname')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('googleplus_url').'" title="Follow '.get_the_author_meta('googleplus_displayname').' on Google+" style="background:url(https://ssl.gstatic.com/s2/oz/images/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('googleplus_displayname').'</a></li>';
+		
+				}			
+
+				if (get_the_author_meta('facebook_url') && get_the_author_meta('facebook_displayname')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('facebook_url').'" title="Follow '.get_the_author_meta('facebook_displayname').' on Facebook" style="background:url(https://facebook.com/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('facebook_displayname').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('weibo_url') && get_the_author_meta('weibo_name')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('weibo_url').'" title="Follow '.get_the_author_meta('weibo_name').' on Sina Weibo" style="background:url(http://www.4001010100.com/ENG/images/weibo_favicon.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('weibo_name').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('douban_url') && get_the_author_meta('douban_name')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('douban_url').'" title="Follow '.get_the_author_meta('douban_name').' on Douban" style="background:url(http://douban.com/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('douban_name').'</a></li>';
+		
+				}
+
+				if (get_the_author_meta('v2ex')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="http://v2ex.com/member/'.get_the_author_meta('v2ex').'" title="Follow '.get_the_author_meta('v2ex').' on V2EX.com" style="background:url(http://v2ex.com/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('v2ex').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('github')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="https://github.com/'.get_the_author_meta('github').'" title="Fork '.get_the_author_meta('github').' on Github" style="background:url(http://blog.madpython.com/wp-content/uploads/2010/11/github_icon_32-e1288879601776.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('github').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('obs')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="https://build.opensuse.org/project/show?project=home%3A'.get_the_author_meta('obs').'" title="'.get_the_author_meta('obs').'\'s Home Repository on OBS" style="background:url(https://build.opensuse.org/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('obs').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('dribbble')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="http://dribbble.com/'.get_the_author_meta('dribbble').'" title="Follow '.get_the_author_meta('dribbble').' on Dribbble" style="background:url(http://icons.iconarchive.com/icons/areskub/seize/16/Dribbble-icon.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('dribbble').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('fiveoopx')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="http://500px.com/'.get_the_author_meta('fiveoopx').'" title="Follow '.get_the_author_meta('fiveoopx').' on 500px.com" style="background:url(http://500px.com/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('fiveoopx').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('tumblr')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="http://www.tumblr.com/blog/'.get_the_author_meta('tumblr').'" title="Follow '.get_the_author_meta('tumblr').' on Tumblr" style="background:url(http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/16/Web-Tumblr-alt-Metro-icon.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('tumblr').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('deviantart')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="http://'.get_the_author_meta('deviantart').'.deviantart.com" title="Follow '.get_the_author_meta('deviantart').' on DeviantArt" style="background:url(http://deviantart.com/favicon.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('deviantart').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('skype')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="callto://'.get_the_author_meta('skype').'" title="Call '.get_the_author_meta('skype').' by Skype" style="background:url(http://www.kibaoij.ru/app/aiken/themes/v7/i/skype_16x16.gif) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('skype').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('imessage')) {
+	
+					$output .= '<li class="author-contacts-item" style="background:url(http://t3.gstatic.com/images?q=tbn:ANd9GcSZlQhn0pRrS5Jt1MbDm94NhSN5Wk0ujIbajJnmQtCynjknALpZlfKu_NI) no-repeat center left; padding-left: 18px">'.get_the_author_meta('imessage').'</li>';
+		
+				}
+				
+				if (get_the_author_meta('weixin')) {
+	
+					$output .= '<li class="author-contacts-item" style="background:url(http://www.maimaibao.com/newresource/images/icon/icon_weixin17x17.gif) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('weixin').'</li>';
+		
+				}
+	
+				if (get_the_author_meta('renren_url') && get_the_author_meta('renren_name')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('renren_url').'" title="Follow '.get_the_author_meta('renren_name').' on RenRen" style="background:url(http://www.chinadaily.com.cn/image/ico_renren.gif) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('renren_name').'</a></li>';
+		
+				}
+				
+				if (get_the_author_meta('custom_url') && get_the_author_meta('custom_name') && get_the_author_meta('custom_servicename')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('custom_url').'" title="Follow '.get_the_author_meta('custom_name').' on '.get_the_author_meta('custom_servicename').'">'.get_the_author_meta('custom_name').'</a></li>';
+		
+				}
+
+				if (get_the_author_meta('other')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('other').'">'.get_the_author_meta('other').'</a></li>';
+		
+				}
+	
+			$output .= '</ul>';
+	
+			if (get_the_author_meta('description')) {
+							
+				$output .= '<div>'.get_the_author_meta( 'description' ).'</div>';
+						
+			}
+
+		$output .= '</div><!-- #author-description	-->';
+
+	$output .= '</div><!-- #entry-author-info -->';
+
 	echo $output;
 }

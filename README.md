@@ -40,4 +40,10 @@ I removed a lot of unneeded functions, added codes respect Chinese users tastes(
 
 * Ajax post/comment/image load
 
+### Updates
+
+2013-01-22 Add a very good-looking Author Page.
+
+![](https://raw.github.com/marguerite/neverland/master/neverland/screenshot1.png)
+
 Marguerite

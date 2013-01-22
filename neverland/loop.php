@@ -14,8 +14,8 @@
  * <code>get_template_part( 'loop', 'index' );</code>
  *
  * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @subpackage Neverland
+ * @since Neverland 1.0
  */
 ?>
 
@@ -33,7 +33,7 @@
 <?php
 	/* Start the Loop.
 	 *
-	 * In Twenty Ten we use the same loop in multiple contexts.
+	 * In Neverland we use the same loop in multiple contexts.
 	 * It is broken into three main parts: when we're displaying
 	 * posts that are in the gallery category, when we're displaying
 	 * posts in the asides category, and finally all other posts.
@@ -91,6 +91,29 @@
 
 		</div><!-- #post-## -->
 
+<?php /* How to display in Authors page */ ?>
+<?php elseif(is_author()): ?>
+
+		<li id="post-<?php the_ID();?>" <?php post_class(); ?>>
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<div class="entry-utility">
+				<span class="date"><?php the_date('y-m-d'); ?></span> |
+				<!-- prefetch the category data-->
+				<?php $cat = get_the_category(); ?>
+				<a href="<?php echo get_category_link($cat[0]->term_id); ?>" title="Published in <?php echo $cat[0]->cat_name; ?> Category"><?php echo $cat[0]->cat_name; ?></a> |
+				<?php if ( function_exists( 'the_pageview' ) ) {
+            the_pageview();
+            echo " visits |";
+            } ?>
+				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'neverland' ), __( '1 Comment', 'neverland' ), __( '% Comments', 'neverland' ) ); ?></span>
+				<?php edit_post_link( __( 'Edit', 'neverland' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+			</div><!-- .entry-utility -->
+			<p><?php 
+				//echo mb_substr(get_the_excerpt(), 0, 200, "utf-8");
+				the_excerpt();
+			?></p>
+		</li><!-- #post-## -->
+ 
 <?php else: ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'neverland' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
@@ -181,6 +204,11 @@
 <?php endif; // end archive if.?>
 
 <?php endwhile; // End the loop. Whew. ?>
+
+<?php if(is_author()): ?>
+<!-- eliminate navigation from pinterest -->
+</ul>
+<?php endif; ?>
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
