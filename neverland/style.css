@@ -81,7 +81,23 @@ background:url(images/blockquote-right.png) no-repeat bottom right;
 }
 
 del {
-color:#c09;
+color:#FF2545;
+}
+
+code {
+margin:0 2px;
+padding: 0 5px;
+border:1px solid #eaeaea;
+background-color:#fafafa;
+border-radius:3px;
+}
+
+pre code, h2 code, h3 code, h4 code {
+margin: 0;
+padding: 0;
+border: none;
+background: none;
+border-radius: 0;
 }
 
 .content {
@@ -212,6 +228,16 @@ line-height:61px;
 padding:0 10px;
 }
 
+#header:after,.entry-utility:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: "";
+clear: both;
+height: 0;
+zoom:1;
+}
+
 .content table {
 text-align:center;
 width:300px;
@@ -241,6 +267,14 @@ font-size:10px;
 .entry-content,.entry-summary {
 margin:0 2%;
 padding:12px 0 0;
+}
+
+.entry-content h2, .entry-content h3, .entry-content h4 {
+color: #0068c6;
+}
+
+.entry-content p, .comment-body p {
+  line-height: 200%;
 }
 
 .content .entry-summary p:last-child {
@@ -421,6 +455,12 @@ max-height: 281.25px;
 background-color:#fafafa;
 border:1px solid #bcbcbc;
 box-shadow:0 1px 4px rgba(0,0,0,.25);
+}
+
+.entry-content img.nostyle {
+background: none;
+border: none;
+box-shadow: none;
 }
 
 .navigation {
