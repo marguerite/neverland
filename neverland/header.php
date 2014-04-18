@@ -76,9 +76,9 @@
 		</div>
 		
 		<div id="subscribe">
-			<a class="rss" href="http://ikde.org/feed/"></a>
-			<a class="twitter" href="https://twitter.com/#!/ikde_org/"></a>
-			<a class="gplus" href="https://plus.google.com/103630450909014790042/posts"></a>
+			<a class="rss" target="_blank" href="<?php bloginfo('rss2_url');?>"></a>
+			<a class="twitter" target="_blank" href="https://twitter.com/Coffin5257"></a>
+			<a class="gplus" target="_blank" href="https://plus.google.com/112522410789807448754/posts"></a>
 		</div>
 
 		<div id="access">

@@ -22,14 +22,14 @@
 
 			<div id="site-generator">
 				<?php do_action( 'neverland_credits' ); ?>
-				<a class="wordpress" href="<?php echo esc_url( __('http://wordpress.org/', 'neverland') ); ?>"
+				<a class="wordpress" target="_blank" href="<?php echo esc_url( __('http://wordpress.org/', 'neverland') ); ?>"
 						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'neverland'); ?>" rel="generator">
 					<?php printf('WordPress', 'neverland'); ?>
 				</a>
-				<a class="cc" href="">
+				<a class="cc" target="_blank" href="">
 					& <?php __('Creative Commons','neverland');?>
 				</a>
-				<a class="gimp" href="http://gimp.org">
+				<a class="gimp" target="_blank" href="http://gimp.org">
 					& <?php __("GIMP (I'm not using Photoshop).",'neverland');?>
 				</a>
 			</div><!-- #site-generator -->
