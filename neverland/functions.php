@@ -414,6 +414,8 @@ function neverland_add_contact_fields($contactmethods) {
 	$contactmethods['googleplus_url'] = 'Google+ URL';
 	$contactmethods['facebook_displayname'] = 'Facebook DisplayName';
 	$contactmethods['facebook_url'] = 'Facebook URL';
+	$contactmethods['zhihu_name'] = 'Zhihu Name';
+	$contactmethods['zhihu_url'] = 'Zhihu URL';
 	$contactmethods['weibo_name'] = 'Sina Weibo Name';
 	$contactmethods['weibo_url'] = 'Sina Weibo URL';
 	$contactmethods['douban_name'] = 'Douban Name';
@@ -474,115 +476,121 @@ function neverland_author_information() {
 	
 				if (get_the_author_meta('twitter')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="https://twitter.com/#!/'.get_the_author_meta('twitter').'" target="_blank" title="Follow '.get_the_author_meta('twitter').' on Twitter" style="background:url(wp-content/themes/neverland/images/twitter.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('twitter').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="https://twitter.com/#!/'.get_the_author_meta('twitter').'" target="_blank" title="Follow '.get_the_author_meta('twitter').' on Twitter" style="background:url('.get_bloginfo('template_directory').'/images/twitter.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('twitter').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('kdelook')) {
 					
-					$output .= '<li class="author-contacts-item"><a href="http://kde-look.org/usermanager/search.php?username='.get_the_author_meta('kdelook').'"  target="_blank" title="Follow '.get_the_author_meta('kdelook').' on kde-look(apps).org" style="background:url(wp-content/themes/neverland/images/kdelook.ico) no-repeat center left; padding: 18px;">'.get_the_author_meta('kdelook').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="http://kde-look.org/usermanager/search.php?username='.get_the_author_meta('kdelook').'"  target="_blank" title="Follow '.get_the_author_meta('kdelook').' on kde-look(apps).org" style="background:url('.get_bloginfo('template_directory').'/images/kdelook.ico) no-repeat center left; padding: 18px;">'.get_the_author_meta('kdelook').'</a></li>';
 				
 				}
 				
 				if (get_the_author_meta('identica')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="https://identi.ca/'.get_the_author_meta('identica').'"  target="_blank" title="Follow '.get_the_author_meta('identica').' on Identi.ca" style="background:url(wp-content/themes/neverland/images/identica.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('identica').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="https://identi.ca/'.get_the_author_meta('identica').'"  target="_blank" title="Follow '.get_the_author_meta('identica').' on Identi.ca" style="background:url('.get_bloginfo('template_directory').'/images/identica.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('identica').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('plurk')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="https://plurk.com/'.get_the_author_meta('plurk').'"  target="_blank" title="Follow '.get_the_author_meta('plurk').' on Plurk" style="background:url(wp-content/themes/neverland/images/plurk.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('plurk').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="https://plurk.com/'.get_the_author_meta('plurk').'"  target="_blank" title="Follow '.get_the_author_meta('plurk').' on Plurk" style="background:url('.get_bloginfo('template_directory').'/images/plurk.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('plurk').'</a></li>';
 		
 				}	
 				
 				if (get_the_author_meta('googleplus_url') && get_the_author_meta('googleplus_displayname')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('googleplus_url').'"  target="_blank" title="Follow '.get_the_author_meta('googleplus_displayname').' on Google+" style="background:url(wp-content/themes/neverland/images/googleplus.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('googleplus_displayname').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('googleplus_url').'"  target="_blank" title="Follow '.get_the_author_meta('googleplus_displayname').' on Google+" style="background:url('.get_bloginfo('template_directory').'/images/googleplus.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('googleplus_displayname').'</a></li>';
 		
 				}			
 
 				if (get_the_author_meta('facebook_url') && get_the_author_meta('facebook_displayname')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('facebook_url').'"  target="_blank" title="Follow '.get_the_author_meta('facebook_displayname').' on Facebook" style="background:url(wp-content/themes/neverland/images/facebook.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('facebook_displayname').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('facebook_url').'"  target="_blank" title="Follow '.get_the_author_meta('facebook_displayname').' on Facebook" style="background:url('.get_bloginfo('template_directory').'/images/facebook.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('facebook_displayname').'</a></li>';
+		
+				}
+
+				if (get_the_author_meta('zhihu_url') && get_the_author_meta('zhihu_name')) {
+	
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('zhihu_url').'"  target="_blank" title="Follow '.get_the_author_meta('zhihu_name').' on Zhihu" style="background:url('.get_bloginfo('template_directory').'/images/zhihu.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('zhihu_name').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('weibo_url') && get_the_author_meta('weibo_name')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('weibo_url').'"  target="_blank" title="Follow '.get_the_author_meta('weibo_name').' on Sina Weibo" style="background:url(wp-content/themes/neverland/images/weibo.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('weibo_name').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('weibo_url').'"  target="_blank" title="Follow '.get_the_author_meta('weibo_name').' on Sina Weibo" style="background:url('.get_bloginfo('template_directory').'/images/weibo.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('weibo_name').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('douban_url') && get_the_author_meta('douban_name')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('douban_url').'"  target="_blank" title="Follow '.get_the_author_meta('douban_name').' on Douban" style="background:url(wp-content/themes/neverland/images/douban.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('douban_name').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('douban_url').'"  target="_blank" title="Follow '.get_the_author_meta('douban_name').' on Douban" style="background:url('.get_bloginfo('template_directory').'/images/douban.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('douban_name').'</a></li>';
 		
 				}
 
 				if (get_the_author_meta('v2ex')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="http://v2ex.com/member/'.get_the_author_meta('v2ex').'"  target="_blank" title="Follow '.get_the_author_meta('v2ex').' on V2EX.com" style="background:url(wp-content/themes/neverland/images/v2ex.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('v2ex').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="http://v2ex.com/member/'.get_the_author_meta('v2ex').'"  target="_blank" title="Follow '.get_the_author_meta('v2ex').' on V2EX.com" style="background:url('.get_bloginfo('template_directory').'/images/v2ex.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('v2ex').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('github')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="https://github.com/'.get_the_author_meta('github').'"  target="_blank" title="Fork '.get_the_author_meta('github').' on Github" style="background:url(wp-content/themes/neverland/images/github.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('github').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="https://github.com/'.get_the_author_meta('github').'"  target="_blank" title="Fork '.get_the_author_meta('github').' on Github" style="background:url('.get_bloginfo('template_directory').'/images/github.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('github').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('obs')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="https://build.opensuse.org/project/show?project=home%3A'.get_the_author_meta('obs').'"  target="_blank" title="'.get_the_author_meta('obs').'\'s Home Repository on OBS" style="background:url(wp-content/themes/neverland/images/obs.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('obs').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="https://build.opensuse.org/project/show?project=home%3A'.get_the_author_meta('obs').'"  target="_blank" title="'.get_the_author_meta('obs').'\'s Home Repository on OBS" style="background:url('.get_bloginfo('template_directory').'/images/obs.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('obs').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('dribbble')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="http://dribbble.com/'.get_the_author_meta('dribbble').'"  target="_blank" title="Follow '.get_the_author_meta('dribbble').' on Dribbble" style="background:url(wp-content/themes/neverland/images/dribbble.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('dribbble').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="http://dribbble.com/'.get_the_author_meta('dribbble').'"  target="_blank" title="Follow '.get_the_author_meta('dribbble').' on Dribbble" style="background:url('.get_bloginfo('template_directory').'/images/dribbble.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('dribbble').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('fiveoopx')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="http://500px.com/'.get_the_author_meta('fiveoopx').'"  target="_blank" title="Follow '.get_the_author_meta('fiveoopx').' on 500px.com" style="background:url(wp-content/themes/neverland/images/500px.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('fiveoopx').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="http://500px.com/'.get_the_author_meta('fiveoopx').'"  target="_blank" title="Follow '.get_the_author_meta('fiveoopx').' on 500px.com" style="background:url('.get_bloginfo('template_directory').'/images/500px.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('fiveoopx').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('tumblr')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="http://www.tumblr.com/blog/'.get_the_author_meta('tumblr').'"  target="_blank" title="Follow '.get_the_author_meta('tumblr').' on Tumblr" style="background:url(wp-content/themes/neverland/images/tumblr.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('tumblr').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="http://www.tumblr.com/blog/'.get_the_author_meta('tumblr').'"  target="_blank" title="Follow '.get_the_author_meta('tumblr').' on Tumblr" style="background:url('.get_bloginfo('template_directory').'/images/tumblr.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('tumblr').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('deviantart')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="http://'.get_the_author_meta('deviantart').'.deviantart.com"  target="_blank" title="Follow '.get_the_author_meta('deviantart').' on DeviantArt" style="background:url(wp-content/themes/neverland/images/deviantart.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('deviantart').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="http://'.get_the_author_meta('deviantart').'.deviantart.com"  target="_blank" title="Follow '.get_the_author_meta('deviantart').' on DeviantArt" style="background:url('.get_bloginfo('template_directory').'/images/deviantart.ico) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('deviantart').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('skype')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="callto://'.get_the_author_meta('skype').'"  target="_blank" title="Call '.get_the_author_meta('skype').' by Skype" style="background:url(wp-content/themes/neverland/images/skype.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('skype').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="callto://'.get_the_author_meta('skype').'"  target="_blank" title="Call '.get_the_author_meta('skype').' by Skype" style="background:url('.get_bloginfo('template_directory').'/images/skype.png) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('skype').'</a></li>';
 		
 				}
 				
 				if (get_the_author_meta('imessage')) {
 	
-					$output .= '<li class="author-contacts-item" style="background:url(wp-content/themes/neverland/images/imessage.jpeg) no-repeat center left; padding-left: 18px">'.get_the_author_meta('imessage').'</li>';
+					$output .= '<li class="author-contacts-item" style="background:url('.get_bloginfo('template_directory').'/images/imessage.jpeg) no-repeat center left; padding-left: 18px">'.get_the_author_meta('imessage').'</li>';
 		
 				}
 				
 				if (get_the_author_meta('weixin')) {
 	
-					$output .= '<li class="author-contacts-item" style="background:url(wp-content/themes/neverland/images/weixin.gif) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('weixin').'</li>';
+					$output .= '<li class="author-contacts-item" style="background:url('.get_bloginfo('template_directory').'/images/weixin.gif) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('weixin').'</li>';
 		
 				}
 	
 				if (get_the_author_meta('renren_url') && get_the_author_meta('renren_name')) {
 	
-					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('renren_url').'"  target="_blank" title="Follow '.get_the_author_meta('renren_name').' on RenRen" style="background:url(wp-content/themes/neverland/images/renren.gif) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('renren_name').'</a></li>';
+					$output .= '<li class="author-contacts-item"><a href="'.get_the_author_meta('renren_url').'"  target="_blank" title="Follow '.get_the_author_meta('renren_name').' on RenRen" style="background:url('.get_bloginfo('template_directory').'/images/renren.gif) no-repeat center left; padding-left: 18px;">'.get_the_author_meta('renren_name').'</a></li>';
 		
 				}
 				
@@ -612,3 +620,19 @@ function neverland_author_information() {
 
 	echo $output;
 }
+
+function copyright($content) {
+    if(is_single()||is_feed()) {
+        $content.='
+        <br/><br/><br/>
+        <div class="post_info" style="border-top:1px solid #0068C6">
+            <br/>
+			作者： <a href="'.home_url().'">'.get_the_author().'</a><br/>
+            转载请以链接形式注明本文地址：<a href="'.get_permalink().'" title="'.get_the_title().'">'.get_permalink().'</a><br/>
+            版权所有&copy; <a href="'.home_url().'">'.get_bloginfo('name').'</a> | 本文采用 <a title="署名-非商业性使用-相同方式共享" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">BY-NC-SA</a> 进行授权。
+            <br/><br/>
+            </div>';
+                }
+    return $content;
+}
+add_filter ('the_content', 'copyright');
