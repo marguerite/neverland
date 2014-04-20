@@ -20,6 +20,7 @@
 					</div><!-- .entry-content -->
 
 				</div><!-- #post-## -->
+				<br/><br/><br/>
 
 				<?php // Improved Author Information ?>
 				<?php neverland_author_information(); ?>

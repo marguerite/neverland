@@ -669,7 +669,7 @@ padding:5px 15px;
 }
 
 #searchform {
-width:90%;
+width:80%;
 margin:15px auto;
 }
 
@@ -686,6 +686,7 @@ padding:0;
 
 #searchform #s {
 height:32px;
+width: 70%;
 border-radius:5px 0 0 5px;
 box-shadow:none;
 vertical-align:top;
